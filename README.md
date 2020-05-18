@@ -7,7 +7,7 @@ programming languages.
 We achieve this by implementing the same simple, CPU-bound algorithm in each
 language and running each implementation on the same computer.
 
-Data from this project is updated periodically and published in the
+Data from this project are updated periodically and published in the
 [Research Computing User's Guide](http://acadix.biz/publications.php).
 
 Selection sort was chosen for its easy implementation and high
