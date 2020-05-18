@@ -20,4 +20,3 @@ end
 foreach num ($array[2-$#array])
     echo $num
 end
-

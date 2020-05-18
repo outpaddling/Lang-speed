@@ -1,11 +1,7 @@
 #!/usr/bin/env perl
 #
-# Author:
-# Title:
-# Description:
-# Command-line arguments:
-# Return values:
-#
+# Author: J Bacon
+# Description: Selection sort
 
 &read_array($array);
 &sort_array($array);
@@ -58,4 +54,3 @@ sub print_array
 	print $array[$c];
     }
 }
-
