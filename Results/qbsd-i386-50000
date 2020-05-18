@@ -1,0 +1,40 @@
+FreeBSD qbsd.jbacon.dyndns.org 7.2-RELEASE FreeBSD 7.2-RELEASE #0: Fri May  1 08:49:13 UTC 2009     root@walker.cse.buffalo.edu:/usr/obj/usr/src/sys/GENERIC  i386
+CPU: AMD Athlon(tm) Processor (1009.95-MHz 686-class CPU)
+Generating input file of 50000 numbers...
+
+C Compiler version:
+Using built-in specs.
+Target: i386-undermydesk-freebsd
+Configured with: FreeBSD/i386 system compiler
+Thread model: posix
+gcc version 4.2.1 20070719  [FreeBSD]
+
+Java version:
+java version "1.6.0_07"
+Diablo Java(TM) SE Runtime Environment (build 1.6.0_07-b02)
+Diablo Java HotSpot(TM) Client VM (build 10.0-b23, mixed mode, sharing)
+
+Compiling programs...
+
+Sorting with Unix sort command...
+User time = 0.23 seconds (.00383 minutes) (.00006 hours).
+
+Sorting with C int array and subscripts...
+User time = 8.22 seconds (.13700 minutes) (.00228 hours).
+
+Sorting with C long array and subscripts...
+User time = 7.37 seconds (.12283 minutes) (.00204 hours).
+
+Sorting with C long array and pointers...
+User time = 6.34 seconds (.10566 minutes) (.00176 hours).
+
+Sorting with C++ long array and subscripts...
+User time = 5.85 seconds (.09750 minutes) (.00162 hours).
+
+Sorting with Java int array, Just-In-Time compiler enabled...
+User time = 13.49 seconds (.22483 minutes) (.00374 hours).
+
+Sorting with Java long array, Just-In-Time compiler enabled...
+User time = 24.18 seconds (.40300 minutes) (.00671 hours).
+
+Sorting with Java long array, Just-In-Time compiler disabled...

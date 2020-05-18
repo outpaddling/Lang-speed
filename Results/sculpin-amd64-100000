@@ -1,0 +1,56 @@
+FreeBSD sculpin.acadix.biz 10.3-RELEASE-p4 FreeBSD 10.3-RELEASE-p4 #0: Sat May 28 12:23:44 UTC 2016     root@amd64-builder.daemonology.net:/usr/obj/usr/src/sys/GENERIC  amd64
+CPU: AMD Athlon(tm) 64 X2 Dual Core Processor 4200+ (2211.38-MHz K8-class CPU)
+Generating input file of 100000 numbers...
+
+C Compiler version:
+Using built-in specs.
+COLLECT_GCC=gcc48
+COLLECT_LTO_WRAPPER=/usr/local/libexec/gcc48/gcc/x86_64-portbld-freebsd10.1/4.8.5/lto-wrapper
+Target: x86_64-portbld-freebsd10.1
+Configured with: ./../gcc-4.8.5/configure --disable-bootstrap --disable-nls --enable-gnu-indirect-function --libdir=/usr/local/lib/gcc48 --libexecdir=/usr/local/libexec/gcc48 --program-suffix=48 --with-as=/usr/local/bin/as --with-gmp=/usr/local --with-gxx-include-dir=/usr/local/lib/gcc48/include/c++/ --with-ld=/usr/local/bin/ld --with-pkgversion='FreeBSD Ports Collection' --with-system-zlib --with-ecj-jar=/usr/local/share/java/ecj-4.5.jar --enable-languages=c,c++,objc,fortran,java --prefix=/usr/local --localstatedir=/var --mandir=/usr/local/man --infodir=/usr/local/info/gcc48 --build=x86_64-portbld-freebsd10.1
+Thread model: posix
+gcc version 4.8.5 (FreeBSD Ports Collection) 
+
+Java version:
+openjdk version "1.8.0_92"
+OpenJDK Runtime Environment (build 1.8.0_92-b14)
+OpenJDK 64-Bit Server VM (build 25.92-b14, mixed mode)
+
+Compiling programs...
+selsort_int.c:32:24: warning: format specifies type 'unsigned int *' but the argument has type 'size_t *' (aka 'unsigned long *') [-Wformat]
+    fscanf(stream,"%u",&array->size);
+                   ~~  ^~~~~~~~~~~~
+                   %zu
+1 warning generated.
+
+Sorting with Unix sort command...
+User time = 0.42 seconds (.00700 minutes) (.00011 hours).
+
+Sorting with C int array, clang37 and subscripts...
+User time = 13.28 seconds (.22133 minutes) (.00368 hours).
+
+Sorting with C int array and subscripts...
+User time = 13.27 seconds (.22116 minutes) (.00368 hours).
+
+Sorting with C long array and subscripts...
+User time = 16.84 seconds (.28066 minutes) (.00467 hours).
+
+Sorting with C long array and pointers...
+User time = 16.92 seconds (.28200 minutes) (.00470 hours).
+
+Sorting with C++ int array and subscripts...
+User time = 13.33 seconds (.22216 minutes) (.00370 hours).
+
+Sorting with C++ long array and subscripts...
+User time = 16.89 seconds (.28150 minutes) (.00469 hours).
+
+Sorting with Fortran 90 integer array and subscripts...
+User time = 28.97 seconds (.48283 minutes) (.00804 hours).
+
+Sorting with Java int array, Just-In-Time compiler enabled...
+User time = 14.56 seconds (.24266 minutes) (.00404 hours).
+
+Sorting with Java long array, Just-In-Time compiler enabled...
+User time = 16.82 seconds (.28033 minutes) (.00467 hours).
+
+Sorting with Java long array, Just-In-Time compiler disabled...

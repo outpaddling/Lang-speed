@@ -1,0 +1,9 @@
+#!/bin/sh
+
+rm -f *.bak .*.bak *.core sorted-list time *nums genrand \
+    *int *long *float *double \
+    *.class \
+    constants.mod \
+    out_c_int_subscripts \
+    out_c_long_subscripts \
+    out_sort

@@ -1,0 +1,38 @@
+
+The purpose of this project is to demonstrate relative raw performance of
+various programming languages.
+
+We achieve this by implementing the same simple, CPU-bound algorithm in each
+language and running each implementation on the same computer.
+
+Selection sort was chosen for its easy implementation, simplicity, and
+high CPU use.  It uses a typical nested loop such as would be found in
+many other programs where run time is a concern.
+
+Choosing a different algorithm would likely produce different relative
+run times, but tell the same basic story.  We are not concerned here with
+precise run times, but a ball-park estimate of language performance.
+
+Feel free to implement another algorithm such as matrix multiplication,
+Gauss elimination, etc. if you are curious about how different the results
+will be.
+
+To run the test, type:
+
+    ./bench list-size
+
+This will create a new file in the Results subdirectory with the same
+output shown on the terminal.
+    
+When running the test, choose list size that will require at least a few
+seconds of run time for the fastest implementation, so that program overhead
+does not constitute a significant fraction of total run time.  200,000
+elements has proven to work well on an Intel i5, requiring a few seconds
+for the fastest languages and a several minutes for the slowest.
+
+The operating system is irrelevant, as the program is purely computational.
+Run time should depend only on the compiler and the hardware.
+
+The project was developed on FreeBSD, where installing the latest compilers
+and interpreters is very easy through the FreeBSD ports system.  Patches
+for other platforms are welcome.

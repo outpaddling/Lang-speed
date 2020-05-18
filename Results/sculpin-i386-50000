@@ -1,0 +1,33 @@
+FreeBSD sculpin 6.1-RELEASE-p11 FreeBSD 6.1-RELEASE-p11 #5: Wed Dec 20 18:29:42 PST 2006     root@PCBSD.localhost:/usr/obj/usr/src/sys/PCBSDv1.3-SMP  i386
+CPU: AMD Athlon(tm) 64 X2 Dual Core Processor 4200+ (2211.35-MHz 686-class CPU)
+Generating input file of 50000 numbers...
+
+C Compiler version:
+Using built-in specs.
+Configured with: FreeBSD/i386 system compiler
+Thread model: posix
+gcc version 3.4.4 [FreeBSD] 20050518
+
+Java version:
+java version "1.5.0-p4"
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0-p4-bacon_26_mar_2007_15_26)
+Java HotSpot(TM) Server VM (build 1.5.0-p4-bacon_26_mar_2007_15_26, mixed mode)
+
+Compiling programs...
+
+Sorting with Unix sort command...
+User time = 0.09 seconds (.00150 minutes) (.00002 hours).
+
+Sorting with C int array and subscripts...
+User time = 2.32 seconds (.03866 minutes) (.00064 hours).
+
+Sorting with icc C int array and subscripts...
+User time = 2.32 seconds (.03866 minutes) (.00064 hours).
+
+Sorting with C long array and subscripts...
+User time = 2.32 seconds (.03866 minutes) (.00064 hours).
+
+Sorting with C long array and pointers...
+User time = 2.33 seconds (.03883 minutes) (.00064 hours).
+
+Sorting with C++ long array and subscripts...

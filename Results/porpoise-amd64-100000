@@ -1,0 +1,81 @@
+FreeBSD porpoise.jbacon.dyndns.org 8.3-RELEASE FreeBSD 8.3-RELEASE #0: Mon Apr  9 21:23:18 UTC 2012     root@mason.cse.buffalo.edu:/usr/obj/usr/src/sys/GENERIC  amd64
+CPU: AMD Athlon(tm) 64 X2 Dual Core Processor 6000+ (2999.90-MHz K8-class CPU)
+Generating input file of 100000 numbers...
+
+C Compiler version:
+Using built-in specs.
+COLLECT_GCC=gcc47
+COLLECT_LTO_WRAPPER=/usr/local/libexec/gcc47/gcc/x86_64-portbld-freebsd8.1/4.7.0/lto-wrapper
+Target: x86_64-portbld-freebsd8.1
+Configured with: ./../gcc-4.7-20120225/configure --disable-nls --enable-languages=c,c++,objc,fortran --libdir=/usr/local/lib/gcc47 --libexecdir=/usr/local/libexec/gcc47 --program-suffix=47 --with-as=/usr/local/bin/as --with-gmp=/usr/local --with-gxx-include-dir=/usr/local/lib/gcc47/include/c++/ --with-ld=/usr/local/bin/ld --with-libiconv-prefix=/usr/local --with-pkgversion='FreeBSD Ports Collection' --with-system-zlib --enable-languages=c,c++,objc,fortran,java --prefix=/usr/local --mandir=/usr/local/man --infodir=/usr/local/info/gcc47 --build=x86_64-portbld-freebsd8.1
+Thread model: posix
+gcc version 4.7.0 20120225 (experimental) (FreeBSD Ports Collection) 
+
+Java version:
+openjdk version "1.6.0_30"
+OpenJDK Runtime Environment (build 1.6.0_30-b24)
+OpenJDK 64-Bit Server VM (build 20.0-b12, mixed mode)
+
+Compiling programs...
+
+Sorting with Unix sort command...
+User time = 0.13 seconds (.00216 minutes) (.00003 hours).
+
+Sorting with C int array and subscripts...
+User time = 9.80 seconds (.16333 minutes) (.00272 hours).
+
+Sorting with C long array and subscripts...
+User time = 11.29 seconds (.18816 minutes) (.00313 hours).
+
+Sorting with C long array and pointers...
+User time = 11.71 seconds (.19516 minutes) (.00325 hours).
+
+Sorting with C++ int array and subscripts...
+User time = 9.83 seconds (.16383 minutes) (.00273 hours).
+
+Sorting with C++ long array and subscripts...
+User time = 11.46 seconds (.19100 minutes) (.00318 hours).
+
+Sorting with Fortran 90 integer array and subscripts...
+User time = 10.09 seconds (.16816 minutes) (.00280 hours).
+
+Sorting with Java int array, Just-In-Time compiler enabled...
+User time = 10.92 seconds (.18200 minutes) (.00303 hours).
+
+Sorting with Java long array, Just-In-Time compiler enabled...
+User time = 11.28 seconds (.18800 minutes) (.00313 hours).
+
+Sorting with Java long array, Just-In-Time compiler disabled...
+User time = 361.51 seconds (6.02516 minutes) (.10041 hours).
+
+Sorting with Python...
+User time = 1090.08 seconds (18.16800 minutes) (.30280 hours).
+
+Sorting with Perl...
+
+The Perl version of selection sort would take too long for
+a large data set.  The time below is for 5000 elements.  To estimate
+how long the script would take for 100000, we multiply by (100000^2 / 5000^2).
+User time = 5.70 seconds (.09500 minutes) (.00158 hours).
+Estimated user time for 100000:
+User time = 2280.00000 seconds (38.00000 minutes) (.63333 hours).
+
+Sorting with C-shell...
+
+The shell script version of selection sort would take too long for
+a large data set.  The time below is for 500 elements.  To estimate
+how long the script would take for 100000, we multiply by (100000^2 / 500^2).
+
+Sorting with C-shell...
+User time = 5.45 seconds (.09083 minutes) (.00151 hours).
+Estimated user time for 100000:
+User time = 218000.00000 seconds (3633.33333 minutes) (60.55555 hours).
+
+Sorting floats with C array and subscripts...
+User time = 6.95 seconds (.11583 minutes) (.00193 hours).
+
+Sorting doubles with C array and subscripts...
+User time = 8.64 seconds (.14400 minutes) (.00240 hours).
+
+Sorting doubles with Java, Just-In-Time compiler enabled...
+User time = 13.22 seconds (.22033 minutes) (.00367 hours).
