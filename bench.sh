@@ -144,6 +144,11 @@ $time_cmd Rscript ./selsort.R ${count}nums > sorted-list 2> time
 sync
 report_time
 
+printf  "\nSorting with vectorized R...\n"
+$time_cmd Rscript ./selsort-vectorized.R ${count}nums > sorted-list 2> time
+sync
+report_time
+
 # printf  "\nSorting with Octave...\n"
 # $time_cmd octave --jit-compiler selsort.m ${count}nums > sorted-list 2> time
 # sync

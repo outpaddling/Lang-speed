@@ -2,9 +2,10 @@
 %   Program description: Selection sort
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-arg_list = argv();
-fprintf('Reading %s...\n', arg_list{1});
-fid = fopen(arg_list{1});
+% arg_list = argv();
+% fprintf('Reading %s...\n', arg_list{1});
+% fid = fopen(arg_list{1});
+fid = fopen('200000nums');
 
 list=fscanf(fid, '%d');
 list_size=list(1);
@@ -31,3 +32,4 @@ toc
 for c = 1:list_size
     fprintf('%d\n', list(c));
 end
+exit

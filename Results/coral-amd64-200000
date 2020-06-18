@@ -1,9 +1,9 @@
 ==========================================================
-Sun May 17 17:59:01 CDT 2020
+Thu Jun 18 15:11:41 CDT 2020
 ==========================================================
-FreeBSD coral.acadix.biz 12.1-RELEASE-p5 FreeBSD 12.1-RELEASE-p5 GENERIC  amd64
+FreeBSD coral.acadix.biz 12.1-RELEASE-p6 FreeBSD 12.1-RELEASE-p6 GENERIC  amd64
 ==========================================================
-CPU: Intel(R) Core(TM) i5-3470T CPU @ 2.90GHz (2893.49-MHz K8-class CPU)
+CPU: Intel(R) Core(TM) i5-3470T CPU @ 2.90GHz (2893.50-MHz K8-class CPU)
 ==========================================================
 Generating input file of 200000 numbers...
 ==========================================================
@@ -73,166 +73,60 @@ Compiling with gfortran9, real(8)...
 ==========================================================
 
 Sorting with Unix sort command...
-User time = 0.37 seconds (.00616 minutes) (.00010 hours).
+User time = 0.39 seconds (.00650 minutes) (.00010 hours).
+
+Sorting with vectorized R...
+User time = 41.22 seconds (.68700 minutes) (.01145 hours).
 
 Sorting int array with clang10 and subscripts...
 User time = 7.81 seconds (.13016 minutes) (.00216 hours).
 
 Sorting long array with clang10 and subscripts...
-User time = 8.09 seconds (.13483 minutes) (.00224 hours).
+User time = 8.12 seconds (.13533 minutes) (.00225 hours).
 
 Sorting float array with clang10 and subscripts...
 User time = 10.79 seconds (.17983 minutes) (.00299 hours).
 
 Sorting double array with clang10 and subscripts...
-User time = 10.84 seconds (.18066 minutes) (.00301 hours).
+User time = 10.83 seconds (.18050 minutes) (.00300 hours).
 
 Sorting int array with clang10 and pointers...
-User time = 7.73 seconds (.12883 minutes) (.00214 hours).
+User time = 7.71 seconds (.12850 minutes) (.00214 hours).
 
 Sorting long array with clang10 and pointers...
-User time = 8.03 seconds (.13383 minutes) (.00223 hours).
+User time = 8.04 seconds (.13400 minutes) (.00223 hours).
 
 Sorting float array with clang10 and pointers...
-User time = 9.60 seconds (.16000 minutes) (.00266 hours).
+User time = 9.62 seconds (.16033 minutes) (.00267 hours).
 
 Sorting double array with clang10 and pointers...
 User time = 10.08 seconds (.16800 minutes) (.00280 hours).
 
 Sorting int array with gcc9 and subscripts...
-User time = 12.26 seconds (.20433 minutes) (.00340 hours).
+User time = 12.27 seconds (.20450 minutes) (.00340 hours).
 
 Sorting long array with gcc9 and subscripts...
-User time = 12.28 seconds (.20466 minutes) (.00341 hours).
+User time = 12.29 seconds (.20483 minutes) (.00341 hours).
 
 Sorting float array with gcc9 and subscripts...
 User time = 12.35 seconds (.20583 minutes) (.00343 hours).
 
 Sorting double array with gcc9 and subscripts...
-User time = 12.43 seconds (.20716 minutes) (.00345 hours).
+User time = 12.42 seconds (.20700 minutes) (.00345 hours).
 
 Sorting int array with gcc9 and pointers...
-User time = 12.26 seconds (.20433 minutes) (.00340 hours).
+User time = 12.29 seconds (.20483 minutes) (.00341 hours).
 
 Sorting long array with gcc9 and pointers...
-User time = 12.27 seconds (.20450 minutes) (.00340 hours).
+User time = 12.29 seconds (.20483 minutes) (.00341 hours).
 
 Sorting float array with gcc9 and pointers...
-User time = 23.19 seconds (.38650 minutes) (.00644 hours).
+User time = 23.22 seconds (.38700 minutes) (.00645 hours).
 
 Sorting double array with gcc9 and pointers...
-User time = 23.19 seconds (.38650 minutes) (.00644 hours).
+User time = 23.24 seconds (.38733 minutes) (.00645 hours).
 
 Sorting int array with clang++10 and subscripts...
 User time = 8.06 seconds (.13433 minutes) (.00223 hours).
 
 Sorting long array with clang++10 and subscripts...
-User time = 8.49 seconds (.14150 minutes) (.00235 hours).
-
-Sorting float array with clang++10 and subscripts...
-User time = 11.01 seconds (.18350 minutes) (.00305 hours).
-
-Sorting double array with clang++10 and subscripts...
-User time = 11.04 seconds (.18400 minutes) (.00306 hours).
-
-Sorting int array with clang++10 and pointers...
-User time = 7.99 seconds (.13316 minutes) (.00221 hours).
-
-Sorting long array with clang++10 and pointers...
-User time = 8.33 seconds (.13883 minutes) (.00231 hours).
-
-Sorting float array with clang++10 and pointers...
-User time = 9.81 seconds (.16350 minutes) (.00272 hours).
-
-Sorting double array with clang++10 and pointers...
-User time = 10.27 seconds (.17116 minutes) (.00285 hours).
-
-Sorting int array with clang++10 and vectors...
-User time = 8.05 seconds (.13416 minutes) (.00223 hours).
-
-Sorting long array with clang++10 and vectors...
-User time = 8.35 seconds (.13916 minutes) (.00231 hours).
-
-Sorting float array with clang++10 and vectors...
-User time = 11.02 seconds (.18366 minutes) (.00306 hours).
-
-Sorting double array with clang++10 and vectors...
-User time = 11.16 seconds (.18600 minutes) (.00310 hours).
-
-Sorting int array with g++9 and subscripts...
-User time = 12.37 seconds (.20616 minutes) (.00343 hours).
-
-Sorting long array with g++9 and subscripts...
-User time = 12.38 seconds (.20633 minutes) (.00343 hours).
-
-Sorting float array with g++9 and subscripts...
-User time = 18.55 seconds (.30916 minutes) (.00515 hours).
-
-Sorting double array with g++9 and subscripts...
-User time = 18.55 seconds (.30916 minutes) (.00515 hours).
-
-Sorting int array with g++9 and pointers...
-User time = 12.35 seconds (.20583 minutes) (.00343 hours).
-
-Sorting long array with g++9 and pointers...
-User time = 12.38 seconds (.20633 minutes) (.00343 hours).
-
-Sorting float array with g++9 and pointers...
-User time = 23.35 seconds (.38916 minutes) (.00648 hours).
-
-Sorting double array with g++9 and pointers...
-User time = 23.35 seconds (.38916 minutes) (.00648 hours).
-
-Sorting int array with g++9 and vectors...
-User time = 12.35 seconds (.20583 minutes) (.00343 hours).
-
-Sorting long array with g++9 and vectors...
-User time = 12.36 seconds (.20600 minutes) (.00343 hours).
-
-Sorting float array with g++9 and vectors...
-User time = 18.53 seconds (.30883 minutes) (.00514 hours).
-
-Sorting double array with g++9 and vectors...
-User time = 18.52 seconds (.30866 minutes) (.00514 hours).
-
-Sorting integer array with flang and subscripts...
-User time = 12.43 seconds (.20716 minutes) (.00345 hours).
-
-Sorting real array with flang and subscripts...
-User time = 18.47 seconds (.30783 minutes) (.00513 hours).
-
-Sorting real(8) array with flang and subscripts...
-User time = 18.56 seconds (.30933 minutes) (.00515 hours).
-
-Sorting integer array with gfortran9 and subscripts...
-User time = 12.39 seconds (.20650 minutes) (.00344 hours).
-
-Sorting real array with gfortran9 and subscripts...
-User time = 18.54 seconds (.30900 minutes) (.00515 hours).
-
-Sorting real(8) array with gfortran9 and subscripts...
-User time = 18.52 seconds (.30866 minutes) (.00514 hours).
-
-Sorting with Go...
-User time = 31.82 seconds (.53033 minutes) (.00883 hours).
-
-Sorting with Java int array, Just-In-Time compiler enabled...
-User time = 31.24 seconds (.52066 minutes) (.00867 hours).
-
-Sorting with Java long array, Just-In-Time compiler enabled...
-User time = 31.22 seconds (.52033 minutes) (.00867 hours).
-
-Sorting with Java long array, Just-In-Time compiler disabled...
-User time = 347.23 seconds (5.78716 minutes) (.09645 hours).
-
-Sorting with Python+numba...
-User time = 38.39 seconds (.63983 minutes) (.01066 hours).
-
-Sorting with Python...
-User time = 2647.11 seconds (44.11850 minutes) (.73530 hours).
-
-Sorting with Perl...
-User time = 2934.35 seconds (48.90583 minutes) (.81509 hours).
-
-Sorting with R...
-User time = 2174.13 seconds (36.23550 minutes) (.60392 hours).
