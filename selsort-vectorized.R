@@ -22,21 +22,13 @@ list_size <- nums[1]
 dim(nums) <- c(length(nums))
 
 last <- length(nums)
+# print(last)
 
 # Sort list
 for (top in 2:(last-1))
 {
-    # Find smallest
-    low <- top
-    c2 <- top+1
-    while (c2 <= last)
-    {
-	if ( nums[c2] < nums[low] )
-	{
-	    low <- c2
-	}
-	c2 <- c2 + 1
-    }
+    # Find smallest using intrinsic R search (compiled loop)
+    low = top + which.min(nums[top:last]) - 1
     
     temp <- nums[low]
     nums[low] <- nums[top]
@@ -44,7 +36,7 @@ for (top in 2:(last-1))
 }
 
 # print list
-for (c in 2:length(nums))
+for (c in 2:last)
 {
     print(nums[c])
 }
