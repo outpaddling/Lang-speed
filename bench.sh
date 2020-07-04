@@ -134,6 +134,11 @@ $time_cmd $python selsort.py ${count}nums > sorted-list 2> time
 sync
 report_time
 
+printf  "\nSorting with vectorized Python...\n"
+$time_cmd $python selsort-vectorized.py ${count}nums > sorted-list 2> time
+sync
+report_time
+
 printf  "\nSorting with Perl...\n"
 $time_cmd perl ./selsort.pl < ${count}nums > sorted-list 2> time
 sync
