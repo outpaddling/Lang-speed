@@ -2,9 +2,6 @@
 
 set -e
 
-printf "Octave explicit loop...\n"
-time octave selsort.m > sorted-octave
-
 printf "Octave vectorized...\n"
 time octave selsortvectorized.m > sorted-octavev
 
@@ -17,4 +14,7 @@ time /compat/linux/usr/MATLAB/R2018a/bin/matlab \
 printf "Matlab explicit loop...\n"
 time /compat/linux/usr/MATLAB/R2018a/bin/matlab \
     -nojvm -r "run('selsort.m');" > sorted-matlab
+
+printf "Octave explicit loop...\n"
+time octave selsort.m > sorted-octave
 
