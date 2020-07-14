@@ -1,0 +1,20 @@
+#!/compat/linux/bin/bash
+
+set -e
+
+printf "Octave explicit loop...\n"
+time octave selsort.m > sorted-octave
+
+printf "Octave vectorized...\n"
+time octave selsortvectorized.m > sorted-octavev
+
+# Remarkably, Matlab does not tolerate a '-' in a filename
+# Using selsort-vectorized.m, matlab tries to run selsort.m
+printf "Matlab vectorized...\n"
+time /compat/linux/usr/MATLAB/R2018a/bin/matlab \
+    -nojvm -r "run('selsortvectorized.m');" > sorted-matlabv
+
+printf "Matlab explicit loop...\n"
+time /compat/linux/usr/MATLAB/R2018a/bin/matlab \
+    -nojvm -r "run('selsort.m');" > sorted-matlab
+

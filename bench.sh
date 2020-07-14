@@ -144,6 +144,11 @@ $time_cmd perl ./selsort.pl < ${count}nums > sorted-list 2> time
 sync
 report_time
 
+printf  "\nSorting with vectorized Perl...\n"
+$time_cmd perl ./selsort-vectorized.pl < ${count}nums > sorted-list 2> time
+sync
+report_time
+
 printf  "\nSorting with R...\n"
 $time_cmd Rscript ./selsort.R ${count}nums > sorted-list 2> time
 sync

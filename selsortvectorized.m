@@ -16,12 +16,8 @@ fprintf('Sorting...\n');
 tic
 for start = 1:list_size
     % Find lowest
-    low = start;
-    for c = start+1:list_size
-	if ( list(c) < list(low) )
-	    low = c;
-	end
-    end
+    [junk,low] = min(list(start:list_size));
+    low = low + start - 1;
     
     % Swap with first
     temp = list(low);

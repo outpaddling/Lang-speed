@@ -28,6 +28,7 @@ last <- length(nums)
 for (top in 2:(last-1))
 {
     # Find smallest using intrinsic R search (compiled loop)
+    # This is a popular solution on the forums
     low = top + which.min(nums[top:last]) - 1
     
     temp <- nums[low]

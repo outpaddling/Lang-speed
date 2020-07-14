@@ -40,6 +40,7 @@ def sort_list(list, size):
     for start in range(0, size):
         
         # Find smallest using vector operations
+        # This is a popular solution on the forums
         low_val=min(list[start:size])
         low=list.index(low_val,start,size)
 

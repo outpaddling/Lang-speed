@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 fprintf('Reading...\n');
-fid = fopen('100000nums');
+fid = fopen('200000nums');
 
 list=fscanf(fid, '%d');
 list_size=list(1);
