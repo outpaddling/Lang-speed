@@ -6,7 +6,7 @@
 %fprintf('Reading %s...\n', arg_list{1});
 %fid = fopen(arg_list{1});
 
-fid = fopen('200000nums');
+fid = fopen('10nums');
 list=fscanf(fid, '%d');
 list_size=list(1);
 list=list(2:list_size+1);

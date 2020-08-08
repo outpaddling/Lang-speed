@@ -26,7 +26,7 @@ languages such as Python or Perl, mostly using built-in features or libraries
 written in compiled languages like C and C++.  The point of this comparison,
 however, is to show the relative speed of code implemented natively in each
 language.  Many researchers implement scientific code in interpreted languages,
-unaware that compiled languages are much faster.  This tool is meant to
+unaware that compiled languages are much faster.  This code is meant to
 provide data to guide the choice of language for time-consuming algorithms.
 
 To run the test, type:
@@ -40,11 +40,11 @@ When running the test, choose list size that will require at least a few
 seconds of run time for the fastest implementation, so that program overhead
 does not constitute a significant fraction of total run time.  200,000
 elements has proven to work well on an Intel i5, requiring a few seconds
-for the fastest languages and a several minutes for the slowest.
+for the fastest languages and several minutes or hours for the slowest.
 
 The operating system is irrelevant, as the program is purely computational.
 Run time should depend only on the compiler/interpreter and the hardware.
 
 The project was developed on FreeBSD, where installing the latest compilers
-and interpreters is very easy through the FreeBSD ports system.  Patches
+and interpreters is very easy to install via the FreeBSD ports system.  Patches
 for other platforms are welcome.
