@@ -49,12 +49,12 @@ void    selsort(array_t *array)
     size_t  base,
 	    c,
 	    min;
-    data_t    temp;
+    data_t  temp;
 	    
     for (base=0; base < array->size; ++base)
     {
 	min = base;
-	for (c=base; c < array->size; ++c)
+	for (c = base + 1; c < array->size; ++c)
 	    if ( array->data[c] < array->data[min] )
 		min = c;
 	temp = array->data[min];

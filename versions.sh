@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-clang_ver=''
+clang_ver=12
 gcc_ver=10
 python_ver=38
 python_major_ver=`echo $python_ver | cut -c 1`
