@@ -103,34 +103,29 @@ for compiler in $flang $gfortran; do
 done
 
 printf  "\nSorting with Go...\n"
-$time_cmd go run selsort.go < ${count}nums out > sorted-list 2> time
+$time_cmd ./selsort-go < ${count}nums out > sorted-list 2> time
 sync
 report_time
 
 # FIXME: Add julia
 
-printf  "\nSorting with Java int array, Just-In-Time compiler enabled...\n"
-$time_cmd java SelectSortInt < ${count}nums > sorted-list 2> time
+printf  "\nSorting with $java int array, Just-In-Time compiler enabled...\n"
+$time_cmd $java SelectSortInt < ${count}nums > sorted-list 2> time
 sync
 report_time
 
-printf  "\nSorting with Java long array, Just-In-Time compiler enabled...\n"
-$time_cmd java SelectSort < ${count}nums > sorted-list 2> time
+printf  "\nSorting with $java long array, Just-In-Time compiler enabled...\n"
+$time_cmd $java SelectSort < ${count}nums > sorted-list 2> time
 sync
 report_time
 
-printf  "\nSorting with Java long array, Just-In-Time compiler disabled...\n"
-$time_cmd java -Xint SelectSort < ${count}nums > sorted-list 2> time
+printf  "\nSorting with $java long array, Just-In-Time compiler disabled...\n"
+$time_cmd $java -Xint SelectSort < ${count}nums > sorted-list 2> time
 sync
 report_time
 
 printf  "\nSorting with Python+numba...\n"
-$time_cmd ./selsort-numba.py ${count}nums > sorted-list 2> time
-sync
-report_time
-
-printf  "\nSorting with Python...\n"
-$time_cmd $python selsort.py ${count}nums > sorted-list 2> time
+$time_cmd $python ./selsort-numba.py ${count}nums > sorted-list 2> time
 sync
 report_time
 
@@ -139,8 +134,12 @@ $time_cmd $python selsort-vectorized.py ${count}nums > sorted-list 2> time
 sync
 report_time
 
-printf  "\nSorting with Perl...\n"
-$time_cmd perl ./selsort.pl < ${count}nums > sorted-list 2> time
+printf  "\nSorting with Python explicit loops...\n"
+$time_cmd $python selsort-vectorized.py ${count}nums > sorted-list 2> time
+sync
+report_time
+...\n"
+$time_cmd $python selsort.py ${count}nums > sorted-list 2> time
 sync
 report_time
 
@@ -149,8 +148,8 @@ $time_cmd perl ./selsort-vectorized.pl < ${count}nums > sorted-list 2> time
 sync
 report_time
 
-printf  "\nSorting with R...\n"
-$time_cmd Rscript ./selsort.R ${count}nums > sorted-list 2> time
+printf  "\nSorting with Perl explicit loops...\n"
+$time_cmd perl ./selsort.pl < ${count}nums > sorted-list 2> time
 sync
 report_time
 
@@ -159,27 +158,17 @@ $time_cmd Rscript ./selsort-vectorized.R ${count}nums > sorted-list 2> time
 sync
 report_time
 
-# printf  "\nSorting with Octave...\n"
-# $time_cmd octave --jit-compiler selsort.m ${count}nums > sorted-list 2> time
-# sync
-# report_time
-
-exit
-
-pcount=5000
-if [ $count -gt $pcount ]; then
-    printf  "\nThe Perl version of selection sort would take too long for\n"
-    printf  "a large data set.  The time below is for $pcount elements.  To estimate\n"
-    printf  "how long the script would take for $count, we multiply by ($count^2 / $pcount^2).\n"
-    ./genrand $pcount > ${pcount}nums
-    $time_cmd ./selsort.pl < ${pcount}nums > sorted-list 2> time
-    report_time
-    s=`cat time | awk ' { print $3 }'`
-    seconds=`printf  "scale=5\n${s} * $count^2 / $pcount^2\n" | bc`
-    printf "Estimated user time for $count:\n"
-    print_time
-else
-    $time_cmd ./selsort.pl < ${count}nums > sorted-list 2> time
-    report_time
-fi
+printf  "\nSorting with R explicit loops...\n"
+$time_cmd Rscript ./selsort.R ${count}nums > sorted-list 2> time
 sync
+report_time
+
+printf  "\nSorting with vectorized Octave...\n"
+$time_cmd octave selsortvectorized.m ${count}nums > sorted-list 2> time
+sync
+report_time
+
+printf  "\nSorting with Octave explicit loops...\n"
+$time_cmd octave selsort.m ${count}nums > sorted-list 2> time
+sync
+report_time

@@ -29,4 +29,4 @@ fi
 
 count=$1
 
-sh bench.sh $count 2>&1 | tee Results/`hostname -s`-`uname -p`-$count
+./bench.sh $count 2>&1 | tee Results/`hostname -s`-`uname -p`-$count
