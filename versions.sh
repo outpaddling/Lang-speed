@@ -1,8 +1,8 @@
 #!/bin/sh -e
 
-clang_ver=10
-gcc_ver=9
-python_ver=37
+clang_ver=''
+gcc_ver=10
+python_ver=38
 python_major_ver=`echo $python_ver | cut -c 1`
 perl_ver=5
 java_ver=8
