@@ -1,8 +1,23 @@
 #!/bin/sh -e
 
-clang_ver=''
-gcc_ver=''
-python_ver=38
+for clang_ver in 14 13 12 11 10 ''; do
+    if which clang$clang_ver; then
+	break;
+    fi
+done
+
+for gcc_ver in 14 13 12 11 10 9 8 ''; do
+    if which gcc$gcc_ver; then
+	break;
+    fi
+done
+
+for python_ver in 3.9 3.8 3.7 ''; do
+    if which python$python_ver; then
+	break;
+    fi
+done
+
 python_major_ver=`echo $python_ver | cut -c 1`
 perl_ver=5
 java_ver=11
