@@ -9,6 +9,9 @@ for compiler in $clang $gcc; do
 	for type in int long float double; do
 	    sed -e "s|long.h|${type}.h|g" selsort-$access.c \
 		> selsort-$access-$type.c
+	    if [ 0$compiler = 0$gcc ] && [ `uname` = FreeBSD ]; then
+		compiler_flags="-Wl,-rpath=/usr/local/lib/gcc$gcc_ver"
+	    fi
 	    printf "Compiling with $compiler $FLAGS, $access, $type...\n"
 	    $compiler $FLAGS selsort-$access-$type.c \
 		-o selsort-$compiler-$access-$type
@@ -22,7 +25,7 @@ for compiler in $clangxx $gxx; do
 	for type in int long float double; do
 	    sed -e "s|long.h|${type}.h|g" selsort-$access.cxx \
 		> selsort-$access-$type.cxx
-	    if [ $compiler = $gxx ]; then
+	    if [ 0$compiler = 0$gxx ] && [ `uname` = FreeBSD ]; then
 		compiler_flags="-Wl,-rpath=/usr/local/lib/gcc$gcc_ver"
 	    fi
 	    printf "Compiling with $compiler $FLAGS, $access, $type...\n"
@@ -33,15 +36,25 @@ for compiler in $clangxx $gxx; do
     done
 done
 
-for type in integer real 'real(8)'; do
-    sed -e "s|data_t|$type|g" selsort.f90 > selsort-$type.f90
-    printf "Compiling with $flang, $type...\n"
-    $flang $flang_flags $FLAGS selsort-$type.f90 -o selsort-$flang-$type
-    printf "Compiling with $gfortran $FLAGS, $type...\n"
-    $gfortran $FLAGS selsort-$type.f90 -o selsort-$gfortran-$type \
-	-Wl,-rpath=/usr/local/lib/gcc$gcc_ver
-    rm -f selsort-$type.f90
-done
+if which flang; then
+    for type in integer real 'real(8)'; do
+	sed -e "s|data_t|$type|g" selsort.f90 > selsort-$type.f90
+	printf "Compiling with $flang, $type...\n"
+	$flang $flang_flags $FLAGS selsort-$type.f90 -o selsort-$flang-$type
+    done
+fi
+
+if which gfortran; then
+    for type in integer real 'real(8)'; do
+	printf "Compiling with $gfortran $FLAGS, $type...\n"
+	if [ `uname` = FreeBSD ]; then
+	    compiler_flags="-Wl,-rpath=/usr/local/lib/gcc$gcc_ver"
+	fi
+	$gfortran $FLAGS selsort-$type.f90 -o selsort-$gfortran-$type \
+	    $compiler_flags
+	rm -f selsort-$type.f90
+    done
+fi
 
 printf "Compiling with go...\n"
 go version

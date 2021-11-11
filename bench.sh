@@ -46,8 +46,10 @@ cc $FLAGS genrand.c -o genrand
 line
 $clang --version
 line
-$gcc --version
-line
+if [ -n "$gcc" ]; then
+    $gcc --version
+    line
+fi
 java -version
 line
 
