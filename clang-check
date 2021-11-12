@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+cc -o genrand genrand.c
+./genrand 100000 > 100000nums
+for CC in clang80 clang90 clang; do
+    $CC --version
+    for opt in -O -O2; do
+	echo $opt
+	$CC $opt -o selsort-subscripts selsort-subscripts.c
+	$CC $opt -o selsort-pointers selsort-pointers.c
+	    printf "Subscripts: "
+	    time ./selsort-subscripts < 100000nums > /dev/null
+	    printf "Pointers:   "
+	    time ./selsort-pointers < 100000nums > /dev/null
+    done
+done
