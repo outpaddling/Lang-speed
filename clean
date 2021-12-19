@@ -4,7 +4,9 @@ rm -f *.bak .*.bak *.core sorted-list time *nums genrand \
     *int *long *float *double selsort-flang* selsort-gfortran* \
     *.class *-go selsort-*.f90 \
     constants.mod \
+    selsort selsort-pointers selsort-subscripts selsort-rust \
     out_c_int_subscripts \
     out_c_long_subscripts \
     out_sort
 git status
+   
