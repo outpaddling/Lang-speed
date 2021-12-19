@@ -3,15 +3,16 @@ use std::io;
 
 fn main()
 {
-    let list: Vec<i32> = Vec::new();
+    let mut list: Vec<i32> = Vec::new();
     
     // Statements here are executed when the compiled binary is called
-    read_list(list);
-    //print_list(list);
+    read_list(&mut list);
+    selection_sort(&mut list);
+    print_list(list);
 }
 
 
-fn read_list(mut list: Vec<i32>)
+fn read_list(list: &mut Vec<i32>)
 
 {
     let mut str = String::new();
@@ -19,17 +20,16 @@ fn read_list(mut list: Vec<i32>)
     let list_size: usize = str.trim().parse::<usize>().expect("invalid input");
     println!("list_size = {:?}", list_size);
     
-    for c in 0..list_size
+    for _c in 0..list_size
     {
-	println!("c = {:?}", c);
-	io::stdin().read_line(&mut str).unwrap();
-	list.push(str.trim().parse().unwrap());
-	//println!("Type 1 : User entered value is {:?}", list[c]);
+	let mut str = String::new();
+	io::stdin().read_line(&mut str).expect("failed to read input.");
+	list.push(str.trim().parse().expect("invalid input"));
     }
 }
 
 
-fn selection_sort(mut list: Vec<i32>)
+fn selection_sort(list: &mut Vec<i32>)
 {
     for i in 0..list.len()
     {
@@ -45,8 +45,7 @@ fn selection_sort(mut list: Vec<i32>)
     }
 }
 
-/*
-fn print_list(mut list: Vec<i32>)
+fn print_list(list: Vec<i32>)
 
 {
     for n in list
@@ -54,4 +53,3 @@ fn print_list(mut list: Vec<i32>)
 	println!("{}", n);
     }
 }
-*/

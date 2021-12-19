@@ -56,6 +56,10 @@ if which gfortran; then
     done
 fi
 
+printf "Compiling with Rust...\n"
+rustc --version
+rustc -O -o selsort-rust selsort.rs
+
 printf "Compiling with go...\n"
 go version
 go build -o selsort-go selsort.go

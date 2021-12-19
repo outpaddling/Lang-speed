@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+# FIXME: Make sure all programs use the same size integer
+
 line()
 {
     printf '==========================================================\n'
@@ -103,6 +105,11 @@ for compiler in $flang $gfortran; do
 	rm -f selsort-$compiler-$type
     done
 done
+
+printf  "\nSorting i32 vector with Rust...\n"
+$time_cmd ./selsort-rust < ${count}nums > sorted-list 2> time
+sync
+report_time
 
 printf  "\nSorting with Go...\n"
 $time_cmd ./selsort-go < ${count}nums out > sorted-list 2> time
