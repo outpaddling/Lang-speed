@@ -10,7 +10,7 @@ import java.io.*;
 
 class Array
 {
-    private long[]  array;
+    private int[]  array;
     private int     array_size;
     
     // Constructor
@@ -33,7 +33,7 @@ class Array
 	{
 	    line = stdin.readLine();
 	    array_size = Integer.parseInt(line);
-	    array = new long[array_size];
+	    array = new int[array_size];
 	}
 	catch(IOException ioex)
 	{
@@ -69,7 +69,7 @@ class Array
 	int     base,
 		c,
 		min;
-	long     temp;
+	int     temp;
 
 	for(base=0; base < array_size-1; base++)
 	{
