@@ -19,6 +19,7 @@ for python_ver in 3.9 3.8 3.7 ''; do
 done
 
 python_major_ver=`echo $python_ver | cut -c 1`
+python_condensed_ver=`echo $python_ver | tr -d '.'`
 perl_ver=5
 java_ver=11
 

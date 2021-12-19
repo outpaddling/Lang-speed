@@ -15,11 +15,19 @@ print_time () {
 
 report_time () {
     seconds=`grep 'real.*user.*sys' time | awk ' { print $3 }'`
+    if [ $# = 1 ]; then
+	# t1 = k * n^2
+	# t2 = k * (n/d)^2
+	# k = t2 / (n/d)^2
+	# t1 = t2 / (n/d)^2 * n^2 = t2 * n^2 / (n/d)^2
+	div=$1
+	seconds=`printf "$seconds * $count^2 / ($count / $div)^2\n" | bc`
+    fi
     print_time
 }
 
 if [ $# != 1 ]; then
-    printf  "Usage: $0 <count>\n"
+    printf  "Utage: $0 <count>\n"
     exit 1
 fi
 count=$1
@@ -44,6 +52,12 @@ line
 printf  "Generating input file of $count numbers...\n"
 cc $FLAGS genrand.c -o genrand
 ./genrand $count > ${count}nums
+
+# Also generate smaller lists for slow languages and extrapolate times
+count20=$((count / 20))
+./genrand $count20 > ${count20}nums
+count5=$((count / 5))
+./genrand $count5 > ${count5}nums
 
 line
 $clang --version
@@ -129,9 +143,9 @@ sync
 report_time
 
 printf  "\nSorting with $java long array, Just-In-Time compiler disabled...\n"
-$time_cmd $java -Xint SelectSort < ${count}nums > sorted-list 2> time
+$time_cmd $java -Xint SelectSort < ${count5}nums > sorted-list 2> time
 sync
-report_time
+report_time 5
 
 printf  "\nSorting with Python+numba...\n"
 $time_cmd $python ./selsort-numba.py ${count}nums > sorted-list 2> time
@@ -139,28 +153,24 @@ sync
 report_time
 
 printf  "\nSorting with vectorized Python...\n"
-$time_cmd $python selsort-vectorized.py ${count}nums > sorted-list 2> time
+$time_cmd $python selsort-vectorized.py ${count5}nums > sorted-list 2> time
 sync
-report_time
+report_time 5
 
-printf  "\nSorting with Python explicit loops...\n"
-$time_cmd $python selsort-vectorized.py ${count}nums > sorted-list 2> time
+printf "\nSorting with Python explicit loops...\n"
+$time_cmd $python selsort.py ${count5}nums > sorted-list 2> time
 sync
-report_time
-...\n"
-$time_cmd $python selsort.py ${count}nums > sorted-list 2> time
-sync
-report_time
+report_time 5
 
 printf  "\nSorting with vectorized Perl...\n"
-$time_cmd perl ./selsort-vectorized.pl < ${count}nums > sorted-list 2> time
+$time_cmd perl ./selsort-vectorized.pl < ${count5}nums > sorted-list 2> time
 sync
-report_time
+report_time 5
 
 printf  "\nSorting with Perl explicit loops...\n"
-$time_cmd perl ./selsort.pl < ${count}nums > sorted-list 2> time
+$time_cmd perl ./selsort.pl < ${count5}nums > sorted-list 2> time
 sync
-report_time
+report_time 5
 
 printf  "\nSorting with vectorized R...\n"
 $time_cmd Rscript ./selsort-vectorized.R ${count}nums > sorted-list 2> time
@@ -168,9 +178,9 @@ sync
 report_time
 
 printf  "\nSorting with R explicit loops...\n"
-$time_cmd Rscript ./selsort.R ${count}nums > sorted-list 2> time
+$time_cmd Rscript ./selsort.R ${count5}nums > sorted-list 2> time
 sync
-report_time
+report_time 5
 
 printf  "\nSorting with vectorized Octave...\n"
 $time_cmd octave selsortvectorized.m ${count}nums > sorted-list 2> time
@@ -178,6 +188,6 @@ sync
 report_time
 
 printf  "\nSorting with Octave explicit loops...\n"
-$time_cmd octave selsort.m ${count}nums > sorted-list 2> time
+$time_cmd octave selsort.m ${count20}nums > sorted-list 2> time
 sync
-report_time
+report_time 20

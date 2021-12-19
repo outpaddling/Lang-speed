@@ -25,7 +25,7 @@ program selsort
     ! Local variables
     integer :: input_status, read_status, list_size
     data_t, allocatable :: list(:)
-    
+
     ! Get size of list
     read (INPUT_UNIT, *, iostat=read_status) list_size
     if ( read_status /= 0 ) then
