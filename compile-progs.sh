@@ -44,7 +44,7 @@ if which flang; then
     done
 fi
 
-if which gfortran; then
+if which $gfortran; then
     for type in integer real 'real(8)'; do
 	printf "Compiling with $gfortran $FLAGS, $type...\n"
 	if [ `uname` = FreeBSD ]; then

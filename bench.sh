@@ -8,8 +8,8 @@ line()
 }
 
 print_time () {
-    minutes=`printf "scale=5; ${seconds} / 60\n" | bc`
-    hours=`printf "scale=5; ${minutes} / 60\n" | bc`
+    minutes=`printf "scale=5; ${seconds} / 60\n" | bc -l`
+    hours=`printf "scale=5; ${minutes} / 60\n" | bc -l`
     printf "User time = ${seconds} seconds (${minutes} minutes) (${hours} hours).\n"
 }
 
@@ -21,7 +21,7 @@ report_time () {
 	# k = t2 / (n/d)^2
 	# t1 = t2 / (n/d)^2 * n^2 = t2 * n^2 / (n/d)^2
 	div=$1
-	seconds=`printf "$seconds * $count^2 / ($count / $div)^2\n" | bc`
+	seconds=`printf "scale=5; $seconds * $count^2 / ($count / $div)^2\n" | bc -l`
     fi
     print_time
 }
@@ -53,7 +53,9 @@ printf  "Generating input file of $count numbers...\n"
 cc $FLAGS genrand.c -o genrand
 ./genrand $count > ${count}nums
 
-# Also generate smaller lists for slow languages and extrapolate times
+# Also generate smaller lists for slow languages and extrapolate times.
+# Comparisons with full runs showed extrapolated times to be with a few
+# percent of time for full runs.
 count20=$((count / 20))
 ./genrand $count20 > ${count20}nums
 count5=$((count / 5))
@@ -152,22 +154,22 @@ $time_cmd $python ./selsort-numba.py ${count}nums > sorted-list 2> time
 sync
 report_time
 
-printf  "\nSorting with vectorized Python...\n"
+printf  "\nSorting with vectorized Python extrapolated...\n"
 $time_cmd $python selsort-vectorized.py ${count5}nums > sorted-list 2> time
 sync
 report_time 5
 
-printf "\nSorting with Python explicit loops...\n"
+printf "\nSorting with Python explicit loops extrapolated...\n"
 $time_cmd $python selsort.py ${count5}nums > sorted-list 2> time
 sync
 report_time 5
 
-printf  "\nSorting with vectorized Perl...\n"
+printf  "\nSorting with vectorized Perl extrapolated...\n"
 $time_cmd perl ./selsort-vectorized.pl < ${count5}nums > sorted-list 2> time
 sync
 report_time 5
 
-printf  "\nSorting with Perl explicit loops...\n"
+printf  "\nSorting with Perl explicit loops extrapolated...\n"
 $time_cmd perl ./selsort.pl < ${count5}nums > sorted-list 2> time
 sync
 report_time 5
@@ -177,7 +179,7 @@ $time_cmd Rscript ./selsort-vectorized.R ${count}nums > sorted-list 2> time
 sync
 report_time
 
-printf  "\nSorting with R explicit loops...\n"
+printf  "\nSorting with R explicit loops extrapolated...\n"
 $time_cmd Rscript ./selsort.R ${count5}nums > sorted-list 2> time
 sync
 report_time 5
@@ -187,7 +189,7 @@ $time_cmd octave selsortvectorized.m ${count}nums > sorted-list 2> time
 sync
 report_time
 
-printf  "\nSorting with Octave explicit loops...\n"
+printf  "\nSorting with Octave explicit loops extrapolated...\n"
 $time_cmd octave selsort.m ${count20}nums > sorted-list 2> time
 sync
 report_time 20
