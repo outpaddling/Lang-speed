@@ -17,7 +17,7 @@ fn read_list(list: &mut Vec<i32>)
 {
     let mut str = String::new();
     io::stdin().read_line(&mut str).expect("failed to read input.");
-    let list_size: usize = str.trim().parse::<usize>().expect("invalid input");
+    let list_size: usize = str.trim().parse().expect("invalid input");
     println!("list_size = {:?}", list_size);
     
     for _c in 0..list_size
@@ -44,6 +44,7 @@ fn selection_sort(list: &mut Vec<i32>)
 	list.swap(small, i);
     }
 }
+
 
 fn print_list(list: Vec<i32>)
 
