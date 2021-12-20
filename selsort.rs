@@ -5,7 +5,6 @@ fn main()
 {
     let mut list: Vec<i32> = Vec::new();
     
-    // Statements here are executed when the compiled binary is called
     read_list(&mut list);
     selection_sort(&mut list);
     print_list(list);
