@@ -30,18 +30,19 @@ fn read_list(list: &mut Vec<i32>)
 
 
 fn selection_sort(list: &mut Vec<i32>)
+
 {
-    for i in 0..list.len()
+    for start in 0..list.len()
     {
-	let mut small = i;
-	for j in (i + 1)..list.len()
+	let mut low = start;
+	for c in (start + 1)..list.len()
 	{
-	    if list[j] < list[small]
+	    if list[c] < list[low]
 	    {
-		small = j;
+		low = c;
 	    }
 	}
-	list.swap(small, i);
+	list.swap(low, start);
     }
 }
 
