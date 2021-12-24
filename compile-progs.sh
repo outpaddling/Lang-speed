@@ -4,10 +4,6 @@
 
 printf  "\nCompiling programs...\n"
 
-printf "Compiling with ldc2...\n"
-ldc2 --version
-ldc2 -O -of=selsort-d selsort.d
-
 for compiler in $clang $gcc; do
     for access in subscripts pointers; do
 	for type in int long float double; do
@@ -59,6 +55,14 @@ if which $gfortran; then
 	rm -f selsort-$type.f90
     done
 fi
+
+printf "Compiling with ldc2...\n"
+ldc2 --version
+ldc2 -O -of=selsort-d selsort.d
+
+printf "Compiling with fpc...\n"
+fpc -iW
+fpc -O -oselsort-pas selsort.pas
 
 printf "Compiling with Rust...\n"
 rustc --version

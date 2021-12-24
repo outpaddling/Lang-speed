@@ -82,6 +82,12 @@ $time_cmd sort -n < ${count}nums > sorted-list 2> time
 sync
 report_time
 
+# Pascal
+printf  "\nSorting int array Pascal...\n"
+$time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
+sync
+report_time
+
 # C
 for compiler in $clang $gcc; do
     for access in subscripts pointers; do
@@ -121,6 +127,12 @@ for compiler in $flang $gfortran; do
 	rm -f selsort-$compiler-$type
     done
 done
+
+# Pascal
+printf  "\nSorting int array Pascal...\n"
+$time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
+sync
+report_time
 
 # D
 printf  "\nSorting int array D...\n"

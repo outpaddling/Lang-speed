@@ -23,6 +23,8 @@ elif [ `uname` = FreeBSD ]; then
 	llvm$clang_ver \
 	gcc$gcc_ver \
 	flang \
+	ldc \
+	fpc \
 	rust \
 	go \
 	perl$perl_ver \
