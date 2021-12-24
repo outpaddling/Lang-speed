@@ -6,6 +6,7 @@ import std.string;
 
 void main()
 {
+    // FIXME: Figure out how to allocate in read_list() and return
     int[200000] list;
     uint    list_size;
 

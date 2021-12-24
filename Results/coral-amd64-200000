@@ -2,7 +2,7 @@
 /usr/local/bin/gcc10
 /usr/local/bin/python3.8
 ==========================================================
-Fri Dec 24 08:47:16 CST 2021
+Fri Dec 24 16:03:37 CST 2021
 ==========================================================
 FreeBSD coral.acadix.biz 13.0-RELEASE-p4 FreeBSD 13.0-RELEASE-p4 #0: Tue Aug 24 07:33:27 UTC 2021     root@amd64-builder.daemonology.net:/usr/obj/usr/src/amd64.amd64/sys/GENERIC  amd64
 ==========================================================
@@ -32,52 +32,6 @@ OpenJDK 64-Bit Server VM (build 25.312-b07, mixed mode)
 /usr/local/bin/python3.8
 
 Compiling programs...
-Compiling with ldc2...
-LDC - the LLVM D compiler (1.23.0):
-  based on DMD v2.093.1 and LLVM 10.0.1
-  built with LDC - the LLVM D compiler (0.17.6)
-  Default target: x86_64-portbld-freebsd13.0
-  Host CPU: ivybridge
-  http://dlang.org - http://wiki.dlang.org/LDC
-
-  Registered Targets:
-    aarch64    - AArch64 (little endian)
-    aarch64_32 - AArch64 (little endian ILP32)
-    aarch64_be - AArch64 (big endian)
-    amdgcn     - AMD GCN GPUs
-    arm        - ARM
-    arm64      - ARM64 (little endian)
-    arm64_32   - ARM64 (little endian ILP32)
-    armeb      - ARM (big endian)
-    bpf        - BPF (host endian)
-    bpfeb      - BPF (big endian)
-    bpfel      - BPF (little endian)
-    hexagon    - Hexagon
-    lanai      - Lanai
-    mips       - MIPS (32-bit big endian)
-    mips64     - MIPS (64-bit big endian)
-    mips64el   - MIPS (64-bit little endian)
-    mipsel     - MIPS (32-bit little endian)
-    msp430     - MSP430 [experimental]
-    nvptx      - NVIDIA PTX 32-bit
-    nvptx64    - NVIDIA PTX 64-bit
-    ppc32      - PowerPC 32
-    ppc64      - PowerPC 64
-    ppc64le    - PowerPC 64 LE
-    r600       - AMD GPUs HD2XXX-HD6XXX
-    riscv32    - 32-bit RISC-V
-    riscv64    - 64-bit RISC-V
-    sparc      - Sparc
-    sparcel    - Sparc LE
-    sparcv9    - Sparc V9
-    systemz    - SystemZ
-    thumb      - Thumb
-    thumbeb    - Thumb (big endian)
-    wasm32     - WebAssembly 32-bit
-    wasm64     - WebAssembly 64-bit
-    x86        - 32-bit X86: Pentium-Pro and above
-    x86-64     - 64-bit X86: EM64T and AMD64
-    xcore      - XCore
 Compiling with clang -O2, subscripts, int...
 Compiling with clang -O2, subscripts, long...
 Compiling with clang -O2, subscripts, float...
@@ -126,6 +80,60 @@ Compiling with flang, real(8)...
 Compiling with gfortran10 -O2, integer...
 Compiling with gfortran10 -O2, real...
 Compiling with gfortran10 -O2, real(8)...
+Compiling with ldc2...
+LDC - the LLVM D compiler (1.23.0):
+  based on DMD v2.093.1 and LLVM 10.0.1
+  built with LDC - the LLVM D compiler (0.17.6)
+  Default target: x86_64-portbld-freebsd13.0
+  Host CPU: ivybridge
+  http://dlang.org - http://wiki.dlang.org/LDC
+
+  Registered Targets:
+    aarch64    - AArch64 (little endian)
+    aarch64_32 - AArch64 (little endian ILP32)
+    aarch64_be - AArch64 (big endian)
+    amdgcn     - AMD GCN GPUs
+    arm        - ARM
+    arm64      - ARM64 (little endian)
+    arm64_32   - ARM64 (little endian ILP32)
+    armeb      - ARM (big endian)
+    bpf        - BPF (host endian)
+    bpfeb      - BPF (big endian)
+    bpfel      - BPF (little endian)
+    hexagon    - Hexagon
+    lanai      - Lanai
+    mips       - MIPS (32-bit big endian)
+    mips64     - MIPS (64-bit big endian)
+    mips64el   - MIPS (64-bit little endian)
+    mipsel     - MIPS (32-bit little endian)
+    msp430     - MSP430 [experimental]
+    nvptx      - NVIDIA PTX 32-bit
+    nvptx64    - NVIDIA PTX 64-bit
+    ppc32      - PowerPC 32
+    ppc64      - PowerPC 64
+    ppc64le    - PowerPC 64 LE
+    r600       - AMD GPUs HD2XXX-HD6XXX
+    riscv32    - 32-bit RISC-V
+    riscv64    - 64-bit RISC-V
+    sparc      - Sparc
+    sparcel    - Sparc LE
+    sparcv9    - Sparc V9
+    systemz    - SystemZ
+    thumb      - Thumb
+    thumbeb    - Thumb (big endian)
+    wasm32     - WebAssembly 32-bit
+    wasm64     - WebAssembly 64-bit
+    x86        - 32-bit X86: Pentium-Pro and above
+    x86-64     - 64-bit X86: EM64T and AMD64
+    xcore      - XCore
+Compiling with fpc...
+3.2.2
+Free Pascal Compiler version 3.2.2 [2021/11/13] for x86_64
+Copyright (c) 1993-2021 by Florian Klaempfl and others
+Target OS: FreeBSD for x86-64
+Compiling selsort.pas
+Linking selsort-pas
+70 lines compiled, 0.1 sec
 Compiling with Rust...
 rustc 1.57.0
 Compiling with go...
@@ -134,10 +142,10 @@ Compiling with /usr/local/openjdk11/bin/javac...
 ==========================================================
 
 Sorting with Unix sort command...
-User time = 0.40 seconds (.00666 minutes) (.00011 hours).
+User time = 0.43 seconds (.00716 minutes) (.00011 hours).
 
 Sorting int array with clang and subscripts...
-User time = 7.81 seconds (.13016 minutes) (.00216 hours).
+User time = 7.83 seconds (.13050 minutes) (.00217 hours).
 
 Sorting long array with clang and subscripts...
 User time = 8.09 seconds (.13483 minutes) (.00224 hours).
@@ -146,7 +154,7 @@ Sorting float array with clang and subscripts...
 User time = 10.79 seconds (.17983 minutes) (.00299 hours).
 
 Sorting double array with clang and subscripts...
-User time = 10.83 seconds (.18050 minutes) (.00300 hours).
+User time = 10.81 seconds (.18016 minutes) (.00300 hours).
 
 Sorting int array with clang and pointers...
 User time = 18.33 seconds (.30550 minutes) (.00509 hours).
@@ -158,48 +166,169 @@ Sorting float array with clang and pointers...
 User time = 18.40 seconds (.30666 minutes) (.00511 hours).
 
 Sorting double array with clang and pointers...
-User time = 18.47 seconds (.30783 minutes) (.00513 hours).
+User time = 18.39 seconds (.30650 minutes) (.00510 hours).
 
 Sorting int array with gcc10 and subscripts...
-User time = 12.27 seconds (.20450 minutes) (.00340 hours).
+User time = 12.26 seconds (.20433 minutes) (.00340 hours).
 
 Sorting long array with gcc10 and subscripts...
-User time = 12.29 seconds (.20483 minutes) (.00341 hours).
+User time = 12.28 seconds (.20466 minutes) (.00341 hours).
 
 Sorting float array with gcc10 and subscripts...
 User time = 18.40 seconds (.30666 minutes) (.00511 hours).
 
 Sorting double array with gcc10 and subscripts...
-User time = 18.40 seconds (.30666 minutes) (.00511 hours).
+User time = 18.39 seconds (.30650 minutes) (.00510 hours).
 
 Sorting int array with gcc10 and pointers...
 User time = 12.27 seconds (.20450 minutes) (.00340 hours).
 
 Sorting long array with gcc10 and pointers...
-User time = 12.26 seconds (.20433 minutes) (.00340 hours).
+User time = 12.28 seconds (.20466 minutes) (.00341 hours).
 
 Sorting float array with gcc10 and pointers...
-User time = 23.20 seconds (.38666 minutes) (.00644 hours).
+User time = 23.21 seconds (.38683 minutes) (.00644 hours).
 
 Sorting double array with gcc10 and pointers...
-User time = 23.22 seconds (.38700 minutes) (.00645 hours).
-
-Sorting int array D...
-User time = 30.54 seconds (.50900 minutes) (.00848 hours).
+User time = 23.21 seconds (.38683 minutes) (.00644 hours).
 
 Sorting int array with clang++ and subscripts...
-User time = 8.06 seconds (.13433 minutes) (.00223 hours).
+User time = 8.08 seconds (.13466 minutes) (.00224 hours).
 
 Sorting long array with clang++ and subscripts...
-User time = 8.39 seconds (.13983 minutes) (.00233 hours).
+User time = 8.43 seconds (.14050 minutes) (.00234 hours).
 
 Sorting float array with clang++ and subscripts...
-User time = 11.04 seconds (.18400 minutes) (.00306 hours).
+User time = 11.03 seconds (.18383 minutes) (.00306 hours).
 
 Sorting double array with clang++ and subscripts...
-User time = 11.07 seconds (.18450 minutes) (.00307 hours).
+User time = 11.08 seconds (.18466 minutes) (.00307 hours).
 
 Sorting int array with clang++ and pointers...
-User time = 18.80 seconds (.31333 minutes) (.00522 hours).
+User time = 18.58 seconds (.30966 minutes) (.00516 hours).
 
 Sorting long array with clang++ and pointers...
+User time = 18.58 seconds (.30966 minutes) (.00516 hours).
+
+Sorting float array with clang++ and pointers...
+User time = 18.65 seconds (.31083 minutes) (.00518 hours).
+
+Sorting double array with clang++ and pointers...
+User time = 18.65 seconds (.31083 minutes) (.00518 hours).
+
+Sorting int array with clang++ and vectors...
+User time = 8.07 seconds (.13450 minutes) (.00224 hours).
+
+Sorting long array with clang++ and vectors...
+User time = 8.43 seconds (.14050 minutes) (.00234 hours).
+
+Sorting float array with clang++ and vectors...
+User time = 11.03 seconds (.18383 minutes) (.00306 hours).
+
+Sorting double array with clang++ and vectors...
+User time = 11.05 seconds (.18416 minutes) (.00306 hours).
+
+Sorting int array with g++10 and subscripts...
+User time = 12.39 seconds (.20650 minutes) (.00344 hours).
+
+Sorting long array with g++10 and subscripts...
+User time = 12.39 seconds (.20650 minutes) (.00344 hours).
+
+Sorting float array with g++10 and subscripts...
+User time = 18.56 seconds (.30933 minutes) (.00515 hours).
+
+Sorting double array with g++10 and subscripts...
+User time = 18.55 seconds (.30916 minutes) (.00515 hours).
+
+Sorting int array with g++10 and pointers...
+User time = 12.38 seconds (.20633 minutes) (.00343 hours).
+
+Sorting long array with g++10 and pointers...
+User time = 12.41 seconds (.20683 minutes) (.00344 hours).
+
+Sorting float array with g++10 and pointers...
+User time = 23.37 seconds (.38950 minutes) (.00649 hours).
+
+Sorting double array with g++10 and pointers...
+User time = 23.36 seconds (.38933 minutes) (.00648 hours).
+
+Sorting int array with g++10 and vectors...
+User time = 12.39 seconds (.20650 minutes) (.00344 hours).
+
+Sorting long array with g++10 and vectors...
+User time = 12.40 seconds (.20666 minutes) (.00344 hours).
+
+Sorting float array with g++10 and vectors...
+User time = 18.56 seconds (.30933 minutes) (.00515 hours).
+
+Sorting double array with g++10 and vectors...
+User time = 18.55 seconds (.30916 minutes) (.00515 hours).
+
+Sorting integer array with flang and subscripts...
+User time = 12.45 seconds (.20750 minutes) (.00345 hours).
+
+Sorting real array with flang and subscripts...
+User time = 18.48 seconds (.30800 minutes) (.00513 hours).
+
+Sorting real(8) array with flang and subscripts...
+User time = 18.57 seconds (.30950 minutes) (.00515 hours).
+
+Sorting integer array with gfortran10 and subscripts...
+User time = 12.39 seconds (.20650 minutes) (.00344 hours).
+
+Sorting real array with gfortran10 and subscripts...
+User time = 18.60 seconds (.31000 minutes) (.00516 hours).
+
+Sorting real(8) array with gfortran10 and subscripts...
+User time = 18.55 seconds (.30916 minutes) (.00515 hours).
+
+Sorting int array Pascal...
+User time = 43.01 seconds (.71683 minutes) (.01194 hours).
+
+Sorting int array D...
+User time = 30.53 seconds (.50883 minutes) (.00848 hours).
+
+Sorting i32 vector with Rust...
+User time = 30.54 seconds (.50900 minutes) (.00848 hours).
+
+Sorting with Go...
+User time = 37.40 seconds (.62333 minutes) (.01038 hours).
+
+Sorting with /usr/local/openjdk11/bin/java int array, Just-In-Time compiler enabled...
+User time = 31.50 seconds (.52500 minutes) (.00875 hours).
+
+Sorting with /usr/local/openjdk11/bin/java long array, Just-In-Time compiler enabled...
+User time = 31.38 seconds (.52300 minutes) (.00871 hours).
+
+Sorting with /usr/local/openjdk11/bin/java long array, Just-In-Time compiler disabled...
+User time = 408.50000 seconds (6.80833 minutes) (.11347 hours).
+
+Sorting longint array with Pascal...
+User time = 43.02 seconds (.71700 minutes) (.01195 hours).
+
+Sorting with Python+numba...
+User time = 44.58 seconds (.74300 minutes) (.01238 hours).
+
+Sorting with vectorized Python extrapolated...
+User time = 769.00000 seconds (12.81666 minutes) (.21361 hours).
+
+Sorting with Python explicit loops extrapolated...
+User time = 2434.50000 seconds (40.57500 minutes) (.67625 hours).
+
+Sorting with vectorized Perl extrapolated...
+User time = 2058.00000 seconds (34.30000 minutes) (.57166 hours).
+
+Sorting with Perl explicit loops extrapolated...
+User time = 2566.50000 seconds (42.77500 minutes) (.71291 hours).
+
+Sorting with vectorized R...
+User time = 97.52 seconds (1.62533 minutes) (.02708 hours).
+
+Sorting with R explicit loops extrapolated...
+User time = 2162.00000 seconds (36.03333 minutes) (.60055 hours).
+
+Sorting with vectorized Octave...
+User time = 34.86 seconds (.58100 minutes) (.00968 hours).
+
+Sorting with Octave explicit loops extrapolated...
+User time = 80512.00000 seconds (1341.86666 minutes) (22.36444 hours).

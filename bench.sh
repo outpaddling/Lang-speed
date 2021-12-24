@@ -82,12 +82,6 @@ $time_cmd sort -n < ${count}nums > sorted-list 2> time
 sync
 report_time
 
-# Pascal
-printf  "\nSorting int array Pascal...\n"
-$time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
-sync
-report_time
-
 # C
 for compiler in $clang $gcc; do
     for access in subscripts pointers; do
@@ -150,8 +144,6 @@ $time_cmd ./selsort-go < ${count}nums out > sorted-list 2> time
 sync
 report_time
 
-# FIXME: Add julia
-
 printf  "\nSorting with $java int array, Just-In-Time compiler enabled...\n"
 $time_cmd $java SelectSortInt < ${count}nums > sorted-list 2> time
 sync
@@ -166,6 +158,11 @@ printf  "\nSorting with $java long array, Just-In-Time compiler disabled...\n"
 $time_cmd $java -Xint SelectSort < ${count5}nums > sorted-list 2> time
 sync
 report_time 5
+
+printf  "\nSorting longint array with Pascal...\n"
+$time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
+sync
+report_time
 
 printf  "\nSorting with Python+numba...\n"
 $time_cmd $python ./selsort-numba.py ${count}nums > sorted-list 2> time
