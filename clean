@@ -1,7 +1,7 @@
 #!/bin/sh
 
-rm -f *.bak .*.bak *.core sorted-list time *nums genrand \
-    *int *long *float *double selsort-flang* selsort-gfortran* \
+rm -f *.o *.bak .*.bak *.core sorted-list time *nums genrand \
+    *int *long *float *double selsort-flang* selsort-gfortran* selsort-d \
     *.class *-go selsort-*.f90 \
     constants.mod \
     selsort selsort-pointers selsort-subscripts selsort-rust \

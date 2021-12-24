@@ -122,6 +122,12 @@ for compiler in $flang $gfortran; do
     done
 done
 
+# D
+printf  "\nSorting int array D...\n"
+$time_cmd ./selsort-d < ${count}nums > sorted-list 2> time
+sync
+report_time
+
 printf  "\nSorting i32 vector with Rust...\n"
 $time_cmd ./selsort-rust < ${count}nums > sorted-list 2> time
 sync

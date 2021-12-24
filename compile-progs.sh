@@ -4,6 +4,10 @@
 
 printf  "\nCompiling programs...\n"
 
+printf "Compiling with ldc2...\n"
+ldc2 --version
+ldc2 -O -of=selsort-d selsort.d
+
 for compiler in $clang $gcc; do
     for access in subscripts pointers; do
 	for type in int long float double; do
