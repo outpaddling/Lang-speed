@@ -204,6 +204,13 @@ $time_cmd octave selsortvectorized.m ${count}nums > sorted-list 2> time
 sync
 report_time
 
+# Julia
+#export PATH=${PATH}:$HOME/julia-1.7.1/bin
+#printf "\nSorting integer array with Julia...\n"
+#$time_cmd julia selsort.julia < ${count20}nums > sorted-list 2> time
+#sync
+#report_time 20
+
 printf  "\nSorting with Octave explicit loops extrapolated...\n"
 $time_cmd octave selsort.m ${count20}nums > sorted-list 2> time
 sync

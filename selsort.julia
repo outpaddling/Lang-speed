@@ -1,0 +1,32 @@
+
+# Get list size
+list_size = parse(UInt, readline())
+
+#= We must allocate an array before referencing it =#
+list = fill(0,list_size)
+
+# Input the list
+println("Reading...");
+for i in 1:list_size
+    list[i] = parse(Int, readline())
+end
+
+# Sort the list
+println("Sorting...")
+for start in 1:list_size-1
+    low=start
+    for i in start+1:list_size
+	if ( list[i] < list[low] )
+	    low=i
+	end
+    end
+    temp=list[low]
+    list[low]=list[start]
+    list[start]=temp
+end
+
+# Output the list
+println("Sorted list...");
+for i in 1:list_size
+    println(list[i])
+end
