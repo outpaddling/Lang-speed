@@ -1,3 +1,11 @@
+#!/usr/bin/env julia
+
+##########################################################################
+# This traditional approach is incredibly slow.  See selsort-le.julia for
+# a much faster, but enigmatic implementation.  Apparently, an
+# understanding of Julia internals and some clever tricks are needed to
+# extract good performance.
+##########################################################################
 
 # Get list size
 list_size = parse(UInt, readline())
