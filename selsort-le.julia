@@ -1,0 +1,50 @@
+
+#############################################################################
+# Adaptation of Donald Le's example at:
+# https://ledinhcuong99.medium.com/implement-selection-sort-in-julia-language-6d2b56167148
+#
+# "smallest" is never used, but if we don't assign it in both places below,
+# the program oddly does not work.
+#############################################################################
+
+function find_smallest(array_example)
+    smallest = array_example[1] # Why is this necessary?
+    smallest_index = 1
+    for i = 2 : size(array_example)[1]
+	if array_example[i] < smallest
+	    smallest = array_example[i] # Why is this necessary?
+	    smallest_index = i
+	end
+    end
+    return smallest_index
+end
+
+function selection_sort(array_example)
+    new_array = []
+    for i in 1:length(array_example)
+	smallest_index = find_smallest(array_example)
+	# Building a new array with push!() while tearing down the old one
+	# is apparently much faster than swapping elements
+	push!(new_array, array_example[smallest_index])
+	deleteat!(array_example, smallest_index)
+    end
+    return new_array
+end
+
+# Get list size
+list_size = parse(UInt, readline())
+
+#= We must allocate an array before referencing it =#
+list = fill(0,list_size)
+
+# Input the list
+println("Reading...");
+for i in 1:list_size
+    list[i] = parse(Int, readline())
+end
+
+new_list = selection_sort(list)
+
+for i in 1:list_size
+    println(new_list[i])
+end
