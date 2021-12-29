@@ -204,30 +204,6 @@ $time_cmd octave selsortvectorized.m ${count}nums > sorted-list 2> time
 sync
 report_time
 
-# Julia
-if ! which julia; then
-    mm=1.7
-    p=1
-    julia_version=$mm.$p
-    # Naming of the URLs on the Julia site is inconsistent
-    # ("x64" for the directory name, "mac64" or "freebsd-x86-64"
-    # in the filename, so we can't easily construct the URL using
-    # $(uname) here.  We'd need a messy nested case that might get broken
-    # by the next release anyway.  Edit below for OS and CPU.
-    dist=julia-$julia_version-freebsd-x86_64.tar.gz
-    if [ ! -e julia-$julia_version/bin/julia ]; then
-	if [ ! -e $dist ]; then
-	    fetch https://julialang-s3.julialang.org/bin/freebsd/x64/$mm/$dist
-	    tar zxvf $dist
-	fi
-    fi
-    export PATH=${PATH}:$(pwd)/julia-$julia_version/bin
-fi
-printf "\nSorting integer array with Julia...\n"
-$time_cmd julia selsort.julia < ${count20}nums > sorted-list 2> time
-sync
-report_time 20
-
 printf  "\nSorting with Octave explicit loops extrapolated...\n"
 $time_cmd octave selsort.m ${count20}nums > sorted-list 2> time
 sync
