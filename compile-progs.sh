@@ -36,11 +36,15 @@ for compiler in $clangxx $gxx; do
     done
 done
 
-if which flang; then
+if which $flang; then
     for type in integer real 'real(8)'; do
 	sed -e "s|data_t|$type|g" selsort.f90 > selsort-$type.f90
 	printf "Compiling with $flang, $type...\n"
+	if [ `uname` = FreeBSD ]; then
+	    flang_flags="-I/usr/local/flang/include"
+	fi
 	$flang $flang_flags $FLAGS selsort-$type.f90 -o selsort-$flang-$type
+	rm -f selsort-$type.f90
     done
 fi
 
@@ -50,6 +54,7 @@ if which $gfortran; then
 	if [ `uname` = FreeBSD ]; then
 	    compiler_flags="-Wl,-rpath=/usr/local/lib/gcc$gcc_ver"
 	fi
+	sed -e "s|data_t|$type|g" selsort.f90 > selsort-$type.f90
 	$gfortran $FLAGS selsort-$type.f90 -o selsort-$gfortran-$type \
 	    $compiler_flags
 	rm -f selsort-$type.f90

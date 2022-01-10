@@ -71,7 +71,7 @@ fi
 java -version
 line
 
-#./compile-progs.sh
+./compile-progs.sh
 
 sync
 

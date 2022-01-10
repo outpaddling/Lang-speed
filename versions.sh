@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-for clang_ver in '' 14 13 12 11 10; do
+for clang_ver in 14 13 12 11 10 ''; do
     if which clang$clang_ver; then
 	break;
     fi
@@ -8,6 +8,14 @@ done
 
 for gcc_ver in 14 13 12 11 10 9 8 ''; do
     if which gcc$gcc_ver; then
+	break;
+    fi
+done
+
+# The flang included with llvm13 is a wrapper around gfortran
+# This should pick up the FreeBSD devel/flang port
+for flang_ver in ''; do
+    if which flang$flang_ver; then
 	break;
     fi
 done
@@ -25,8 +33,6 @@ java_ver=11
 
 clang=clang$clang_ver
 clangxx=clang++$clang_ver
-flang="flang"
-flang_flags="-I /usr/local/flang/include"
 
 if [ `uname` = Darwin ] && [ `which gcc` = /usr/bin/gcc ]; then
     printf "gcc in PATH is Apple clang, skipping.\n"
@@ -37,6 +43,7 @@ else
     gcc=gcc$gcc_ver
     gxx=g++$gcc_ver
     gfortran=gfortran$gcc_ver
+    flang=flang$flang_ver
 fi
 : ${PREFIX:=/usr/local}
 if [ `uname` == FreeBSD ]; then
