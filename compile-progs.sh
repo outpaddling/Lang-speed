@@ -36,7 +36,7 @@ for compiler in $clangxx $gxx; do
     done
 done
 
-if which $flang; then
+if [ -n "$flang" ]; then
     for type in integer real 'real(8)'; do
 	sed -e "s|data_t|$type|g" selsort.f90 > selsort-$type.f90
 	printf "Compiling with $flang, $type...\n"
@@ -48,7 +48,7 @@ if which $flang; then
     done
 fi
 
-if which $gfortran; then
+if [ -n "$gfortran" ]; then
     for type in integer real 'real(8)'; do
 	printf "Compiling with $gfortran $FLAGS, $type...\n"
 	if [ `uname` = FreeBSD ]; then
@@ -61,23 +61,33 @@ if which $gfortran; then
     done
 fi
 
-printf "Compiling with ldc2...\n"
-ldc2 --version
-ldc2 -O -of=selsort-d selsort.d
+if which ldc2; then
+    printf "Compiling with ldc2...\n"
+    ldc2 --version
+    ldc2 -O -of=selsort-d selsort.d
+fi
 
-printf "Compiling with fpc...\n"
-fpc -iW
-fpc -O -oselsort-pas selsort.pas
+if which fpc; then
+    printf "Compiling with fpc...\n"
+    fpc -iW
+    fpc -O -oselsort-pas selsort.pas
+fi
 
-printf "Compiling with Rust...\n"
-rustc --version
-rustc -O -o selsort-rust selsort.rs
+if which rustc; then
+    printf "Compiling with Rust...\n"
+    rustc --version
+    rustc -O -o selsort-rust selsort.rs
+fi
 
-printf "Compiling with go...\n"
-go version
-go build -o selsort-go selsort.go
+if which go; then
+    printf "Compiling with go...\n"
+    go version
+    go build -o selsort-go selsort.go
+fi
 
-printf "Compiling with $javac...\n"
-$javac SelectSortInt.java
-$javac SelectSort.java
-$javac SelectSortD.java
+if [ -n "$javac" ]; then
+    printf "Compiling with $javac...\n"
+    $javac SelectSortInt.java
+    $javac SelectSort.java
+    $javac SelectSortD.java
+fi

@@ -114,97 +114,121 @@ done
 for compiler in $flang $gfortran; do
     for type in integer real 'real(8)'; do
 	printf  "\nSorting $type array with $compiler and subscripts...\n"
-	$time_cmd ./selsort-$compiler-$type \
-	    < ${count}nums > sorted-list 2> time
-	sync
-	report_time
-	rm -f selsort-$compiler-$type
+	if [ -e selsort-$compiler-$type ]; then
+	    $time_cmd ./selsort-$compiler-$type \
+		< ${count}nums > sorted-list 2> time
+	    sync
+	    report_time
+	    rm -f selsort-$compiler-$type
+	fi
     done
 done
 
 # Pascal
-printf  "\nSorting int array Pascal...\n"
-$time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
-sync
-report_time
+if [ -e selsort-pas ]; then
+    printf  "\nSorting int array Pascal...\n"
+    $time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
+    sync
+    report_time
+
+    printf  "\nSorting longint array with Pascal...\n"
+    $time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
+    sync
+    report_time
+fi
 
 # D
-printf  "\nSorting int array D...\n"
-$time_cmd ./selsort-d < ${count}nums > sorted-list 2> time
-sync
-report_time
+if [ -e selsort-d ]; then
+    printf  "\nSorting int array D...\n"
+    $time_cmd ./selsort-d < ${count}nums > sorted-list 2> time
+    sync
+    report_time
+fi
 
-printf  "\nSorting i32 vector with Rust...\n"
-$time_cmd ./selsort-rust < ${count}nums > sorted-list 2> time
-sync
-report_time
+if [ -e selsort-rust ]; then
+    printf  "\nSorting i32 vector with Rust...\n"
+    $time_cmd ./selsort-rust < ${count}nums > sorted-list 2> time
+    sync
+    report_time
+fi
 
-printf  "\nSorting with Go...\n"
-$time_cmd ./selsort-go < ${count}nums out > sorted-list 2> time
-sync
-report_time
+if [ -e selsort-go ]; then
+    printf  "\nSorting with Go...\n"
+    $time_cmd ./selsort-go < ${count}nums out > sorted-list 2> time
+    sync
+    report_time
+fi
 
-printf  "\nSorting with $java int array, Just-In-Time compiler enabled...\n"
-$time_cmd $java SelectSortInt < ${count}nums > sorted-list 2> time
-sync
-report_time
+if [ -e SelectSortInt ]; then
+    printf  "\nSorting with $java int array, Just-In-Time compiler enabled...\n"
+    $time_cmd $java SelectSortInt < ${count}nums > sorted-list 2> time
+    sync
+    report_time
+fi
 
-printf  "\nSorting with $java long array, Just-In-Time compiler enabled...\n"
-$time_cmd $java SelectSort < ${count}nums > sorted-list 2> time
-sync
-report_time
+if [ -e SelectSort ]; then
+    printf  "\nSorting with $java long array, Just-In-Time compiler enabled...\n"
+    $time_cmd $java SelectSort < ${count}nums > sorted-list 2> time
+    sync
+    report_time
 
-printf  "\nSorting with $java long array, Just-In-Time compiler disabled...\n"
-$time_cmd $java -Xint SelectSort < ${count5}nums > sorted-list 2> time
-sync
-report_time 5
+    printf  "\nSorting with $java long array, Just-In-Time compiler disabled...\n"
+    $time_cmd $java -Xint SelectSort < ${count5}nums > sorted-list 2> time
+    sync
+    report_time 5
+fi
 
-printf  "\nSorting longint array with Pascal...\n"
-$time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
-sync
-report_time
+if [ -n "$python" ]; then
+    printf  "\nSorting with Python+numba...\n"
+    # FIXME: Find out how to test for presence of numba
+    if $time_cmd $python ./selsort-numba.py ${count}nums > sorted-list 2> time; then
+	sync
+	report_time
+    fi
+    
+    printf  "\nSorting with vectorized Python extrapolated...\n"
+    $time_cmd $python selsort-vectorized.py ${count5}nums > sorted-list 2> time
+    sync
+    report_time 5
+    
+    printf "\nSorting with Python explicit loops extrapolated...\n"
+    $time_cmd $python selsort.py ${count5}nums > sorted-list 2> time
+    sync
+    report_time 5
+fi
 
-printf  "\nSorting with Python+numba...\n"
-$time_cmd $python ./selsort-numba.py ${count}nums > sorted-list 2> time
-sync
-report_time
+if which perl; then
+    printf  "\nSorting with vectorized Perl extrapolated...\n"
+    $time_cmd perl ./selsort-vectorized.pl < ${count5}nums > sorted-list 2> time
+    sync
+    report_time 5
+    
+    printf  "\nSorting with Perl explicit loops extrapolated...\n"
+    $time_cmd perl ./selsort.pl < ${count5}nums > sorted-list 2> time
+    sync
+    report_time 5
+fi
 
-printf  "\nSorting with vectorized Python extrapolated...\n"
-$time_cmd $python selsort-vectorized.py ${count5}nums > sorted-list 2> time
-sync
-report_time 5
+if which R; then
+    printf  "\nSorting with vectorized R...\n"
+    $time_cmd Rscript ./selsort-vectorized.R ${count}nums > sorted-list 2> time
+    sync
+    report_time
+    
+    printf  "\nSorting with R explicit loops extrapolated...\n"
+    $time_cmd Rscript ./selsort.R ${count5}nums > sorted-list 2> time
+    sync
+    report_time 5
+fi
 
-printf "\nSorting with Python explicit loops extrapolated...\n"
-$time_cmd $python selsort.py ${count5}nums > sorted-list 2> time
-sync
-report_time 5
-
-printf  "\nSorting with vectorized Perl extrapolated...\n"
-$time_cmd perl ./selsort-vectorized.pl < ${count5}nums > sorted-list 2> time
-sync
-report_time 5
-
-printf  "\nSorting with Perl explicit loops extrapolated...\n"
-$time_cmd perl ./selsort.pl < ${count5}nums > sorted-list 2> time
-sync
-report_time 5
-
-printf  "\nSorting with vectorized R...\n"
-$time_cmd Rscript ./selsort-vectorized.R ${count}nums > sorted-list 2> time
-sync
-report_time
-
-printf  "\nSorting with R explicit loops extrapolated...\n"
-$time_cmd Rscript ./selsort.R ${count5}nums > sorted-list 2> time
-sync
-report_time 5
-
-printf  "\nSorting with vectorized Octave...\n"
-$time_cmd octave selsortvectorized.m ${count}nums > sorted-list 2> time
-sync
-report_time
-
-printf  "\nSorting with Octave explicit loops extrapolated...\n"
-$time_cmd octave selsort.m ${count20}nums > sorted-list 2> time
-sync
-report_time 20
+if [ which octave ]; then
+    printf  "\nSorting with vectorized Octave...\n"
+    $time_cmd octave selsortvectorized.m ${count}nums > sorted-list 2> time
+    sync
+    report_time
+    
+    printf  "\nSorting with Octave explicit loops extrapolated...\n"
+    $time_cmd octave selsort.m ${count20}nums > sorted-list 2> time
+    sync
+    report_time 20
+fi
