@@ -88,7 +88,7 @@ for compiler in $clang $gcc; do
 	for type in int long float double; do
 	    printf  "\nSorting $type array with $compiler and $access...\n"
 	    $time_cmd ./selsort-$compiler-$access-$type \
-		< ${count}nums > sorted-list 2> time
+		< ${count}nums > sorted-list-$access-$type 2> time
 	    sync
 	    report_time
 	    rm -f selsort-$compiler-$access-$type
@@ -221,7 +221,7 @@ if which R; then
     report_time 5
 fi
 
-if [ which octave ]; then
+if which octave; then
     printf  "\nSorting with vectorized Octave...\n"
     $time_cmd octave selsortvectorized.m ${count}nums > sorted-list 2> time
     sync

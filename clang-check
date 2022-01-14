@@ -2,7 +2,7 @@
 
 cc -o genrand genrand.c
 ./genrand 100000 > 100000nums
-for CC in clang80 clang90 clang; do
+for CC in clang; do
     $CC --version
     for opt in -O -O2; do
 	echo $opt

@@ -54,7 +54,7 @@ void    selsort(array_t *array)
 		min = p;
 	temp = *min;
 	*min = *base;
-	*base  = temp;
+	*base = temp;
     }
 }
 
@@ -65,6 +65,6 @@ void    print_array(FILE *stream,array_t *array)
     data_t  *p,
 	    *end;
     
-    for (p=array->data, end = array->data+array->size; p < end; ++p)
+    for (p=array->data, end = array->data + array->size; p < end; ++p)
 	fprintf(stream,OUTPUT_FORMAT_STRING,*p);
 }
