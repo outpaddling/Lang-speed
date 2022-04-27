@@ -45,7 +45,7 @@ uname -a
 
 line
 if [ -e /var/run/dmesg.boot ]; then 
-    fgrep CPU: /var/run/dmesg.boot
+    fgrep CPU /var/run/dmesg.boot
 fi
 
 line

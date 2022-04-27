@@ -19,7 +19,8 @@ if which pkgin; then
 	openjdk$java_ver \
 	R
 elif [ `uname` = FreeBSD ]; then
-    pkg install -y \
+    pkg update
+    for pkg in \
 	llvm$clang_ver \
 	gcc$gcc_ver \
 	flang \
@@ -32,6 +33,10 @@ elif [ `uname` = FreeBSD ]; then
 	openjdk$java_ver \
 	R \
 	octave
+    do
+	echo $pkg
+	pkg install -y --no-repo-update $pkg || true
+    done
 else
     printf "Don't know how to install tools on `uname` without pkgsrc.\n"
     exit 1
