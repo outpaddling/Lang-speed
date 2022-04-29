@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-for clang_ver in 14 13 12 11 10 ''; do
+for clang_ver in 15 14 13 12 11 10 ''; do
     if which clang$clang_ver; then
 	break;
     fi

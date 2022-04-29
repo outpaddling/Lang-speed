@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
-clang_ver=12
-gcc_ver=10
+clang_ver=13
+gcc_ver=11
 perl_ver=5
 python_ver=38
 java_ver=11
@@ -18,6 +18,7 @@ if which pkgin; then
 	py$python_ver-numba \
 	openjdk$java_ver \
 	R
+    #pkg_admin set automatic $pkg
 elif [ `uname` = FreeBSD ]; then
     pkg update
     for pkg in \
@@ -35,7 +36,7 @@ elif [ `uname` = FreeBSD ]; then
 	octave
     do
 	echo $pkg
-	pkg install -y --no-repo-update $pkg || true
+	pkg install -Ay --no-repo-update $pkg || true
     done
 else
     printf "Don't know how to install tools on `uname` without pkgsrc.\n"
