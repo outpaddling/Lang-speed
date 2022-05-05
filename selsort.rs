@@ -2,6 +2,7 @@
 use std::io;
 
 fn main()
+
 {
     let mut list: Vec<i32> = Vec::new();
     
