@@ -1,10 +1,13 @@
 #!/bin/sh -e
 
+# Nothing about pointer optimizations in release notes:
+# https://releases.llvm.org/9.0.0/docs/ReleaseNotes.html
+
 cc -o genrand genrand.c
 ./genrand 100000 > 100000nums
-for CC in clang80 clang clang13; do
+for CC in clang80 clang90 clang13; do
     $CC --version
-    for opt in -O -O2; do
+    for opt in -O -O2 -Ofast; do
 	echo $opt
 	$CC $opt -o selsort-subscripts selsort-subscripts.c
 	$CC $opt -o selsort-pointers selsort-pointers.c
