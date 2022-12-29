@@ -111,7 +111,8 @@ for compiler in $clangxx $gxx; do
 done
 
 # Fortran
-for compiler in $flang $gfortran; do
+# flang is still not finished as of llvm15
+for compiler in $gfortran; do
     for type in integer real 'real(8)'; do
 	printf  "\nSorting $type array with $compiler and subscripts...\n"
 	if [ -e selsort-$compiler-$type ]; then

@@ -36,7 +36,7 @@ for compiler in $clangxx $gxx; do
     done
 done
 
-if [ -n "$flang" ]; then
+if false; then # Flang not finished as of llvm15 -n "$flang" ]; then
     for type in integer real 'real(8)'; do
 	sed -e "s|data_t|$type|g" selsort.f90 > selsort-$type.f90
 	printf "Compiling with $flang, $type...\n"

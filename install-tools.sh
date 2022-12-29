@@ -1,16 +1,11 @@
 #!/bin/sh -e
 
-clang_ver=13
-gcc_ver=11
-perl_ver=5
-python_ver=38
-java_ver=11
+. versions.sh
 
 if which pkgin; then
     pkgin install -y \
 	llvm$clang_ver \
 	gcc$gcc_ver \
-	flang \
 	rust \
 	go \
 	perl$perl_ver \
@@ -24,7 +19,6 @@ elif [ `uname` = FreeBSD ]; then
     for pkg in \
 	llvm$clang_ver \
 	gcc$gcc_ver \
-	flang \
 	ldc \
 	fpc \
 	rust \

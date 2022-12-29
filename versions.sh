@@ -14,7 +14,7 @@ done
 
 # The flang included with llvm13 is a wrapper around gfortran
 # This should pick up the FreeBSD devel/flang port
-for flang_ver in ''; do
+for flang_ver in 15 14 13 12 11 10; do
     if which flang$flang_ver; then
 	break;
     fi
