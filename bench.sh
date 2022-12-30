@@ -23,7 +23,15 @@ report_time () {
 	div=$1
 	seconds=`printf "scale=5; $seconds * $count^2 / ($count / $div)^2\n" | bc -l`
     fi
+    
+    # User time
     print_time
+
+    # Max resident memory
+    # FIXME: Find a way to report virtual memory use as well
+    # Monitor using top for now
+    printf "RSS = %s KB\n" \
+	$(fgrep 'maximum resident set' time | awk '{ print $1 }')
 }
 
 if [ $# != 1 ]; then
@@ -35,7 +43,7 @@ count=$1
 . versions.sh
 
 # Linux: time_cmd="/usr/bin/time -f '%R real %U user %S sys'"
-time_cmd=/usr/bin/time
+time_cmd='/usr/bin/time -l'
 
 line
 date

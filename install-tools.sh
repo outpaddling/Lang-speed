@@ -10,7 +10,7 @@ if which pkgin; then
 	go \
 	perl$perl_ver \
 	python$python_ver \
-	py$python_ver-numba \
+	py$python_suffix-numba \
 	openjdk$java_ver \
 	R
     #pkg_admin set automatic $pkg
@@ -24,7 +24,7 @@ elif [ `uname` = FreeBSD ]; then
 	rust \
 	go \
 	perl$perl_ver \
-	py$python_ver-numba \
+	py$python_suffix-numba \
 	openjdk$java_ver \
 	R \
 	octave

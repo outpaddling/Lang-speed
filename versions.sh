@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-for clang_ver in 15 14 13 12 11 10 ''; do
+for clang_ver in 13 12 11 10 ''; do
     if which clang$clang_ver; then
 	break;
     fi
@@ -14,7 +14,7 @@ done
 
 # The flang included with llvm13 is a wrapper around gfortran
 # This should pick up the FreeBSD devel/flang port
-for flang_ver in 15 14 13 12 11 10; do
+for flang_ver in 13 12 11 10; do
     if which flang$flang_ver; then
 	break;
     fi
@@ -55,5 +55,6 @@ else
 fi
 
 python=python$python_major_ver
+python_suffix=$(printf "$python_ver" | tr -d '.')
 
 FLAGS=-O2
