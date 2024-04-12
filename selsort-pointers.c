@@ -37,23 +37,40 @@ void    read_array(FILE *stream,array_t *array)
 }
 
 
+data_t  *find_low(data_t *array, data_t * restrict p, data_t *end)
+
+{
+    data_t  min = *p,
+	    *minp = p;
+    while (p < end)
+    {
+	if ( *p < min )
+	{
+	    // p is a restricted pointer, so only p can be used to
+	    // reference array elements.  min is only used for
+	    // address comparison.
+	    min = *p;
+	    minp = p;
+	}
+	++p;
+    }
+    return minp;
+}
+
+
 void    selsort(array_t *array)
 
 {
     data_t  *base,
-	    *p,
-	    *min,
+	    *minp,
 	    *end = array->data + array->size;
     data_t  temp;
 	    
     for (base = array->data; base < end; ++base)
     {
-	min = base;
-	for (p = base + 1; p < end; ++p)
-	    if ( *p < *min )
-		min = p;
-	temp = *min;
-	*min = *base;
+	minp = find_low(array->data, base + 1, end);
+	temp = *minp;
+	*minp = *base;
 	*base = temp;
     }
 }
