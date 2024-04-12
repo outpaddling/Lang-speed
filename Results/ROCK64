@@ -1,2 +1,0 @@
-FreeBSD herring.acadix  bacon ~/Prog/Src/Lang-speed 63: time ./selsort-clang12-subscripts-int < 200000nums > /dev/null
-206.774u 0.015s 3:26.79 99.9%   5+172k 0+0io 0pf+0w

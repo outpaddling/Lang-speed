@@ -1,8 +1,0 @@
-/usr/bin/clang
-/usr/local/bin/gcc10
-/usr/local/bin/python3.8
-==========================================================
-Wed Apr 27 16:16:29 UTC 2022
-==========================================================
-FreeBSD herring.acadix.biz 13.0-RELEASE-p11 FreeBSD 13.0-RELEASE-p11 #0: Tue Apr  5 18:58:59 UTC 2022     root@arm64-builder.daemonology.net:/usr/obj/usr/src/arm64.aarch64/sys/GENERIC  arm64
-==========================================================
