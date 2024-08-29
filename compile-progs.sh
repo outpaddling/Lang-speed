@@ -2,9 +2,18 @@
 
 . versions.sh
 
+#CLANG_FLAGS='-O2 -funroll-loops -mllvm -scev-cheap-expansion-budget=30'
+CLANG_FLAGS='-O2 -funroll-loops'
+GCC_FLAGS='-O2 -funroll-loops'
+
 printf  "\nCompiling programs...\n"
 
 for compiler in $clang $gcc; do
+    if echo $compiler | fgrep -q clang; then
+	FLAGS=$CLANG_FLAGS
+    else
+	FLAGS=$GCC_FLAGS
+    fi
     for access in subscripts pointers; do
 	for type in int long float double; do
 	    sed -e "s|long.h|${type}.h|g" selsort-$access.c \

@@ -36,5 +36,3 @@ fi
 
 python=python$python_major_ver
 python_suffix=$(printf "$python_ver" | tr -d '.')
-
-FLAGS='-O2 -funroll-loops -march=native'
