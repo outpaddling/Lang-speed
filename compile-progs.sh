@@ -1,10 +1,7 @@
 #!/bin/sh -e
 
 . versions.sh
-
-#CLANG_FLAGS='-O2 -funroll-loops -mllvm -scev-cheap-expansion-budget=30'
-CLANG_FLAGS='-O2 -funroll-loops'
-GCC_FLAGS='-O2 -funroll-loops'
+. compiler-flags.sh
 
 printf  "\nCompiling programs...\n"
 
