@@ -19,7 +19,8 @@ fn read_list(list: &mut Vec<i32>)
     io::stdin().read_line(&mut str).expect("failed to read input.");
     let list_size: usize = str.trim().parse().expect("invalid input");
     println!("list_size = {:?}", list_size);
-    
+
+    list.reserve(list_size);
     for _c in 0..list_size
     {
 	let mut str = String::new();
