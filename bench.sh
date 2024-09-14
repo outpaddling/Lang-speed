@@ -133,6 +133,13 @@ for compiler in $gfortran; do
     done
 done
 
+if [ -e selsort-rust ]; then
+    printf  "\nSorting i32 vector with Rust...\n"
+    $time_cmd ./selsort-rust < ${count}nums > sorted-list 2> time
+    sync
+    report_time
+fi
+
 # Pascal
 if [ -e selsort-pas ]; then
     printf  "\nSorting int array Pascal...\n"
@@ -150,13 +157,6 @@ fi
 if [ -e selsort-d ]; then
     printf  "\nSorting int array D...\n"
     $time_cmd ./selsort-d < ${count}nums > sorted-list 2> time
-    sync
-    report_time
-fi
-
-if [ -e selsort-rust ]; then
-    printf  "\nSorting i32 vector with Rust...\n"
-    $time_cmd ./selsort-rust < ${count}nums > sorted-list 2> time
     sync
     report_time
 fi
