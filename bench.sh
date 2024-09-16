@@ -79,7 +79,9 @@ fi
 java -version
 line
 
-./compile-progs.sh
+if [ ! -e SelectSort.class ]; then
+    ./compile-progs.sh
+fi
 
 sync
 
@@ -99,7 +101,6 @@ for compiler in $clang $gcc; do
 		< ${count}nums > sorted-list-$access-$type 2> time
 	    sync
 	    report_time
-	    rm -f selsort-$compiler-$access-$type
 	done
     done
 done
@@ -113,7 +114,6 @@ for compiler in $clangxx $gxx; do
 		< ${count}nums > sorted-list 2> time
 	    sync
 	    report_time
-	    rm -f selsort-$compiler-$access-$type
 	done
     done
 done
@@ -128,7 +128,6 @@ for compiler in $gfortran; do
 		< ${count}nums > sorted-list 2> time
 	    sync
 	    report_time
-	    rm -f selsort-$compiler-$type
 	fi
     done
 done
