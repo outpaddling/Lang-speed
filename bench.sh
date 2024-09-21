@@ -79,9 +79,8 @@ fi
 java -version
 line
 
-if [ ! -e SelectSort.class ]; then
-    ./compile-progs.sh
-fi
+# Always compile, so that compiler output is included in results
+./compile-progs.sh
 
 sync
 
