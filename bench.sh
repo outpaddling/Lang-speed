@@ -173,14 +173,14 @@ if [ -e selsort-go ]; then
     report_time
 fi
 
-if [ -e SelectSortInt ]; then
+if [ -e SelectSortInt.class ]; then
     printf  "\nSorting with $java int array, Just-In-Time compiler enabled...\n"
     $time_cmd $java SelectSortInt < ${count}nums > sorted-list 2> time
     sync
     report_time
 fi
 
-if [ -e SelectSort ]; then
+if [ -e SelectSort.class ]; then
     printf  "\nSorting with $java long array, Just-In-Time compiler enabled...\n"
     $time_cmd $java SelectSort < ${count}nums > sorted-list 2> time
     sync

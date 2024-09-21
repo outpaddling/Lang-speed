@@ -34,5 +34,5 @@ else
     java=java
 fi
 
-python=python$python_major_ver
+python=python$python_ver
 python_suffix=$(printf "$python_ver" | tr -d '.')

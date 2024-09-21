@@ -30,7 +30,7 @@ elif [ `uname` = FreeBSD ]; then
 	octave
     do
 	echo $pkg
-	pkg install -Ay --no-repo-update $pkg || true
+	pkg install -y --no-repo-update $pkg || true
     done
 else
     printf "Don't know how to install tools on `uname` without pkgsrc.\n"
