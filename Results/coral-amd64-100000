@@ -1,5 +1,5 @@
 ==========================================================
-Sat Sep 21 06:59:38 CDT 2024
+Sat Sep 21 15:49:18 CDT 2024
 ==========================================================
 FreeBSD coral.acadix.biz 14.0-RELEASE-p11 FreeBSD 14.0-RELEASE-p11 #0: Wed Sep 18 23:01:59 UTC 2024     root@amd64-builder.daemonology.net:/usr/obj/usr/src/amd64.amd64/sys/GENERIC amd64
 ==========================================================
@@ -141,15 +141,15 @@ Compiling with /usr/local/openjdk11/bin/javac...
 
 Sorting with Unix sort command...
 User time = 0.14 seconds (.00233 minutes) (.00003 hours).
-RSS = 15516 KB
+RSS = 15520 KB
 
 Sorting int array with clang18 and subscripts...
 User time = 4.61 seconds (.07683 minutes) (.00128 hours).
 RSS = 2848 KB
 
 Sorting long array with clang18 and subscripts...
-User time = 4.60 seconds (.07666 minutes) (.00127 hours).
-RSS = 3232 KB
+User time = 4.61 seconds (.07683 minutes) (.00128 hours).
+RSS = 3240 KB
 
 Sorting float array with clang18 and subscripts...
 User time = 4.64 seconds (.07733 minutes) (.00128 hours).
@@ -161,34 +161,34 @@ RSS = 3240 KB
 
 Sorting int array with clang18 and pointers...
 User time = 4.68 seconds (.07800 minutes) (.00130 hours).
-RSS = 2848 KB
+RSS = 2852 KB
 
 Sorting long array with clang18 and pointers...
-User time = 4.68 seconds (.07800 minutes) (.00130 hours).
-RSS = 3236 KB
+User time = 4.69 seconds (.07816 minutes) (.00130 hours).
+RSS = 3240 KB
 
 Sorting float array with clang18 and pointers...
-User time = 6.11 seconds (.10183 minutes) (.00169 hours).
+User time = 6.12 seconds (.10200 minutes) (.00170 hours).
 RSS = 2852 KB
 
 Sorting double array with clang18 and pointers...
-User time = 6.10 seconds (.10166 minutes) (.00169 hours).
+User time = 6.11 seconds (.10183 minutes) (.00169 hours).
 RSS = 3240 KB
 
 Sorting int array with gcc14 and subscripts...
-User time = 3.11 seconds (.05183 minutes) (.00086 hours).
-RSS = 2836 KB
+User time = 3.18 seconds (.05300 minutes) (.00088 hours).
+RSS = 2844 KB
 
 Sorting long array with gcc14 and subscripts...
-User time = 3.13 seconds (.05216 minutes) (.00086 hours).
+User time = 3.14 seconds (.05233 minutes) (.00087 hours).
 RSS = 3232 KB
 
 Sorting float array with gcc14 and subscripts...
-User time = 3.13 seconds (.05216 minutes) (.00086 hours).
-RSS = 2836 KB
+User time = 3.12 seconds (.05200 minutes) (.00086 hours).
+RSS = 2844 KB
 
 Sorting double array with gcc14 and subscripts...
-User time = 3.16 seconds (.05266 minutes) (.00087 hours).
+User time = 3.17 seconds (.05283 minutes) (.00088 hours).
 RSS = 3236 KB
 
 Sorting int array with gcc14 and pointers...
@@ -201,46 +201,46 @@ RSS = 3232 KB
 
 Sorting float array with gcc14 and pointers...
 User time = 5.83 seconds (.09716 minutes) (.00161 hours).
-RSS = 2844 KB
+RSS = 2840 KB
 
 Sorting double array with gcc14 and pointers...
-User time = 5.82 seconds (.09700 minutes) (.00161 hours).
-RSS = 3232 KB
+User time = 5.83 seconds (.09716 minutes) (.00161 hours).
+RSS = 3236 KB
 
 Sorting int array with clang++18 and subscripts...
-User time = 4.74 seconds (.07900 minutes) (.00131 hours).
-RSS = 4208 KB
+User time = 4.76 seconds (.07933 minutes) (.00132 hours).
+RSS = 4212 KB
 
 Sorting long array with clang++18 and subscripts...
-User time = 2.21 seconds (.03683 minutes) (.00061 hours).
-RSS = 4600 KB
-
-Sorting float array with clang++18 and subscripts...
-User time = 4.78 seconds (.07966 minutes) (.00132 hours).
-RSS = 4212 KB
-
-Sorting double array with clang++18 and subscripts...
-User time = 4.77 seconds (.07950 minutes) (.00132 hours).
-RSS = 4600 KB
-
-Sorting int array with clang++18 and pointers...
-User time = 4.82 seconds (.08033 minutes) (.00133 hours).
-RSS = 4212 KB
-
-Sorting long array with clang++18 and pointers...
-User time = 4.82 seconds (.08033 minutes) (.00133 hours).
+User time = 2.22 seconds (.03700 minutes) (.00061 hours).
 RSS = 4596 KB
 
+Sorting float array with clang++18 and subscripts...
+User time = 4.79 seconds (.07983 minutes) (.00133 hours).
+RSS = 4208 KB
+
+Sorting double array with clang++18 and subscripts...
+User time = 4.78 seconds (.07966 minutes) (.00132 hours).
+RSS = 4588 KB
+
+Sorting int array with clang++18 and pointers...
+User time = 4.83 seconds (.08050 minutes) (.00134 hours).
+RSS = 4204 KB
+
+Sorting long array with clang++18 and pointers...
+User time = 4.83 seconds (.08050 minutes) (.00134 hours).
+RSS = 4600 KB
+
 Sorting float array with clang++18 and pointers...
-User time = 6.25 seconds (.10416 minutes) (.00173 hours).
+User time = 6.27 seconds (.10450 minutes) (.00174 hours).
 RSS = 4208 KB
 
 Sorting double array with clang++18 and pointers...
-User time = 6.24 seconds (.10400 minutes) (.00173 hours).
-RSS = 4596 KB
+User time = 6.25 seconds (.10416 minutes) (.00173 hours).
+RSS = 4592 KB
 
 Sorting int array with clang++18 and vectors...
-User time = 4.74 seconds (.07900 minutes) (.00131 hours).
+User time = 4.75 seconds (.07916 minutes) (.00131 hours).
 RSS = 4212 KB
 
 Sorting long array with clang++18 and vectors...
@@ -248,27 +248,27 @@ User time = 2.21 seconds (.03683 minutes) (.00061 hours).
 RSS = 4600 KB
 
 Sorting float array with clang++18 and vectors...
-User time = 4.78 seconds (.07966 minutes) (.00132 hours).
-RSS = 4212 KB
+User time = 4.79 seconds (.07983 minutes) (.00133 hours).
+RSS = 4216 KB
 
 Sorting double array with clang++18 and vectors...
 User time = 4.77 seconds (.07950 minutes) (.00132 hours).
-RSS = 4600 KB
+RSS = 4604 KB
 
 Sorting int array with g++14 and subscripts...
 User time = 3.17 seconds (.05283 minutes) (.00088 hours).
-RSS = 4868 KB
+RSS = 4864 KB
 
 Sorting long array with g++14 and subscripts...
-User time = 3.18 seconds (.05300 minutes) (.00088 hours).
-RSS = 5260 KB
+User time = 3.20 seconds (.05333 minutes) (.00088 hours).
+RSS = 5256 KB
 
 Sorting float array with g++14 and subscripts...
-User time = 3.21 seconds (.05350 minutes) (.00089 hours).
-RSS = 4872 KB
+User time = 3.22 seconds (.05366 minutes) (.00089 hours).
+RSS = 4876 KB
 
 Sorting double array with g++14 and subscripts...
-User time = 3.23 seconds (.05383 minutes) (.00089 hours).
+User time = 3.25 seconds (.05416 minutes) (.00090 hours).
 RSS = 5264 KB
 
 Sorting int array with g++14 and pointers...
@@ -277,103 +277,115 @@ RSS = 4864 KB
 
 Sorting long array with g++14 and pointers...
 User time = 3.15 seconds (.05250 minutes) (.00087 hours).
-RSS = 5252 KB
+RSS = 5260 KB
 
 Sorting float array with g++14 and pointers...
-User time = 5.93 seconds (.09883 minutes) (.00164 hours).
+User time = 5.92 seconds (.09866 minutes) (.00164 hours).
 RSS = 4864 KB
 
 Sorting double array with g++14 and pointers...
 User time = 5.90 seconds (.09833 minutes) (.00163 hours).
-RSS = 5264 KB
+RSS = 5260 KB
 
 Sorting int array with g++14 and vectors...
 User time = 3.17 seconds (.05283 minutes) (.00088 hours).
-RSS = 4876 KB
+RSS = 4868 KB
 
 Sorting long array with g++14 and vectors...
 User time = 3.19 seconds (.05316 minutes) (.00088 hours).
-RSS = 5260 KB
+RSS = 5264 KB
 
 Sorting float array with g++14 and vectors...
-User time = 3.21 seconds (.05350 minutes) (.00089 hours).
-RSS = 4876 KB
+User time = 3.22 seconds (.05366 minutes) (.00089 hours).
+RSS = 4872 KB
 
 Sorting double array with g++14 and vectors...
-User time = 3.25 seconds (.05416 minutes) (.00090 hours).
-RSS = 5260 KB
+User time = 3.24 seconds (.05400 minutes) (.00090 hours).
+RSS = 5268 KB
 
 Sorting integer array with gfortran14 and subscripts...
-User time = 3.11 seconds (.05183 minutes) (.00086 hours).
-RSS = 4272 KB
+User time = 3.12 seconds (.05200 minutes) (.00086 hours).
+RSS = 4268 KB
 
 Sorting real array with gfortran14 and subscripts...
 User time = 3.71 seconds (.06183 minutes) (.00103 hours).
-RSS = 4268 KB
+RSS = 4264 KB
 
 Sorting real(8) array with gfortran14 and subscripts...
 User time = 3.74 seconds (.06233 minutes) (.00103 hours).
-RSS = 4656 KB
+RSS = 4660 KB
 
 Sorting i32 vector with Rust...
 User time = 6.20 seconds (.10333 minutes) (.00172 hours).
-RSS = 3532 KB
+RSS = 3528 KB
 
 Sorting i64 vector with Rust...
 User time = 6.20 seconds (.10333 minutes) (.00172 hours).
-RSS = 3928 KB
+RSS = 3920 KB
 
 Sorting int array Pascal...
-User time = 10.75 seconds (.17916 minutes) (.00298 hours).
-RSS = 1844 KB
+User time = 10.77 seconds (.17950 minutes) (.00299 hours).
+RSS = 1840 KB
 
 Sorting longint array with Pascal...
 User time = 10.75 seconds (.17916 minutes) (.00298 hours).
-RSS = 1844 KB
+RSS = 1840 KB
 
 Sorting int array D...
-User time = 7.66 seconds (.12766 minutes) (.00212 hours).
-RSS = 5808 KB
+User time = 7.67 seconds (.12783 minutes) (.00213 hours).
+RSS = 5820 KB
 
 Sorting with Go...
-User time = 8.09 seconds (.13483 minutes) (.00224 hours).
-RSS = 9440 KB
+User time = 8.03 seconds (.13383 minutes) (.00223 hours).
+RSS = 9008 KB
+
+Sorting with /usr/local/openjdk11/bin/java int array, Just-In-Time compiler enabled...
+User time = 8.42 seconds (.14033 minutes) (.00233 hours).
+RSS = 62256 KB
+
+Sorting with /usr/local/openjdk11/bin/java long array, Just-In-Time compiler enabled...
+User time = 8.38 seconds (.13966 minutes) (.00232 hours).
+RSS = 61244 KB
+
+Sorting with /usr/local/openjdk11/bin/java long array, Just-In-Time compiler disabled...
+User time = 111.75000 seconds (1.86250 minutes) (.03104 hours).
+RSS = 39860 KB
 
 Sorting with Python+numba...
-User time = 12.02 seconds (.20033 minutes) (.00333 hours).
-RSS = 193172 KB
+User time = 12.05 seconds (.20083 minutes) (.00334 hours).
+RSS = 193712 KB
 
 Sorting with vectorized Python extrapolated...
-User time = 175.75000 seconds (2.92916 minutes) (.04881 hours).
-RSS = 11732 KB
+User time = 175.50000 seconds (2.92500 minutes) (.04875 hours).
+RSS = 11728 KB
 
 Sorting with Python explicit loops extrapolated...
 User time = 303.00000 seconds (5.05000 minutes) (.08416 hours).
-RSS = 11584 KB
+RSS = 11600 KB
 /usr/local/bin/perl
 
 Sorting with vectorized Perl extrapolated...
-User time = 504.50000 seconds (8.40833 minutes) (.14013 hours).
-RSS = 9580 KB
+User time = 507.25000 seconds (8.45416 minutes) (.14090 hours).
+RSS = 9600 KB
 
 Sorting with Perl explicit loops extrapolated...
-User time = 615.50000 seconds (10.25833 minutes) (.17097 hours).
-RSS = 8232 KB
+User time = 615.75000 seconds (10.26250 minutes) (.17104 hours).
+RSS = 8272 KB
 /usr/local/bin/R
 
 Sorting with vectorized R...
-User time = 25.45 seconds (.42416 minutes) (.00706 hours).
-RSS = 194612 KB
+User time = 25.71 seconds (.42850 minutes) (.00714 hours).
+RSS = 193564 KB
 
 Sorting with R explicit loops extrapolated...
-User time = 643.50000 seconds (10.72500 minutes) (.17875 hours).
-RSS = 76280 KB
+User time = 637.75000 seconds (10.62916 minutes) (.17715 hours).
+RSS = 78276 KB
 /usr/local/bin/octave
 
 Sorting with vectorized Octave...
-User time = 10.60 seconds (.17666 minutes) (.00294 hours).
-RSS = 80200 KB
+User time = 10.86 seconds (.18100 minutes) (.00301 hours).
+RSS = 122692 KB
 
 Sorting with Octave explicit loops extrapolated...
-User time = 16496.00000 seconds (274.93333 minutes) (4.58222 hours).
-RSS = 78268 KB
+User time = 18528.00000 seconds (308.80000 minutes) (5.14666 hours).
+RSS = 120804 KB
