@@ -82,7 +82,10 @@ fi
 if which rustc; then
     printf "Compiling with Rust...\n"
     rustc --version
-    rustc -O -o selsort-rust selsort.rs
+    rustc -O -o selsort-rust-i32 selsort.rs
+    sed -e 's|i32|i64|g' selsort.rs > selsort64.rs
+    rustc -O -o selsort-rust-i64 selsort64.rs
+    rm -f selsort64.rs
 fi
 
 if which go; then

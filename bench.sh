@@ -132,9 +132,16 @@ for compiler in $gfortran; do
     done
 done
 
-if [ -e selsort-rust ]; then
+if [ -e selsort-rust-i32 ]; then
     printf  "\nSorting i32 vector with Rust...\n"
-    $time_cmd ./selsort-rust < ${count}nums > sorted-list 2> time
+    $time_cmd ./selsort-rust-i32 < ${count}nums > sorted-list 2> time
+    sync
+    report_time
+fi
+
+if [ -e selsort-rust-i64 ]; then
+    printf  "\nSorting i64 vector with Rust...\n"
+    $time_cmd ./selsort-rust-i64 < ${count}nums > sorted-list 2> time
     sync
     report_time
 fi
