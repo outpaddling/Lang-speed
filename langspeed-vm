@@ -1,0 +1,20 @@
+clang18             12m
+gcc14               12m
+clang++18           14m
+g++14               15m
+gfortran14          16m
+rust 1.81.0         13m
+fpc 3.2.3           2m
+ldc 1.39            16m
+java 11.0.24 jit    5797m
+java 11.0.24 no jit 5590m
+go 1.21             1198m
+py311 + numba 0.60  770m
+py311 vector        25m
+py311 expl          25m
+perl 5.36.3 vector  23m
+perl 5.36.3 expl    20m
+R 4.4.1 vector      208m
+R 4.4.1 expl        136m
+octave 9.2.0 vector 660m
+octave 9.2.0 expl   650m
