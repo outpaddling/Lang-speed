@@ -113,6 +113,21 @@ sync
 
 line
 
+cat << EOM
+
+Note: Most results for interpreted languages are extrapolated by sorting
+a smaller list and computing the time for the full list assuming strict
+O(N^2) run time (time = some-constant * list-size^2).  This is a reasonable
+assumption, since the selection sort function accounts for more than
+99% of run time for a large list.
+
+Tests timing the full list as well have shown the extrapolated results
+to be accurate to within a few percent.
+
+EOM
+
+line
+
 format_1_3="%-20s %-10s %-10s "
 format_4_6="%10s %8s %6s "
 format_7="%6s\n"
