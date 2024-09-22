@@ -106,11 +106,12 @@ line
 
 format_1_3="%-20s %-10s %-10s "
 format_4_6="%10s %8s %6s "
-format_7="%5s\n"
+format_7="%6s\n"
 format="$format_1_3$format_4_6$format_7"
 printf "$format" "Language" "Type" "Access" "Seconds" "Minutes" "Hours" "RSS"
 
 format_4_6="%10.2f %8.1f %6.1f "
+format_7="%6sk\n"
 format="$format_1_3$format_4_6$format_7"
 
 compiler="unix-sort"
@@ -151,6 +152,7 @@ done
 # flang is still not finished as of llvm15
 for compiler in $gfortran; do
     for type in integer real 'real(8)'; do
+	access="subscripts"
 	printf "$format_1_3" "$compiler" "$type" "$access"
 	if [ -e selsort-$compiler-$type ]; then
 	    $time_cmd ./selsort-$compiler-$type \
@@ -172,17 +174,6 @@ for type in i32 i64; do
     fi
 done
 
-# Pascal
-if [ -e selsort-pas ]; then
-    compiler="fpc"
-    type="integer"
-    access="subscripts"
-    printf "$format_1_3" "$compiler" "$type" "$access"
-    $time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
-    sync
-    report_time
-fi
-
 # D
 if [ -e selsort-d ]; then
     compiler="ldc"
@@ -200,6 +191,16 @@ if [ -e selsort-go ]; then
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
     $time_cmd ./selsort-go < ${count}nums out > sorted-list 2> time
+    sync
+    report_time
+fi
+
+if [ -e selsort-pas ]; then
+    compiler="fpc"
+    type="integer"
+    access="subscripts"
+    printf "$format_1_3" "$compiler" "$type" "$access"
+    $time_cmd ./selsort-pas < ${count}nums > sorted-list 2> time
     sync
     report_time
 fi
