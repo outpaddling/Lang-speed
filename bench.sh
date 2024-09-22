@@ -105,10 +105,13 @@ sync
 line
 
 format_1_3="%-20s %-10s %-10s "
-format_4_6="%-10s %-8s %-6s "
-format_7="%-5s\n"
+format_4_6="%10s %8s %6s "
+format_7="%5s\n"
 format="$format_1_3$format_4_6$format_7"
 printf "$format" "Language" "Type" "Access" "Seconds" "Minutes" "Hours" "RSS"
+
+format_4_6="%10.2f %8.1f %6.1f "
+format="$format_1_3$format_4_6$format_7"
 
 compiler="unix-sort"
 type="int"
