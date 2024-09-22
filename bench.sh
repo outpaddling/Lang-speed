@@ -31,7 +31,7 @@ report_time () {
     # FIXME: Find a way to report virtual memory use as well
     # Monitor using top for now
     printf "$format_7" \
-	"$(fgrep 'maximum resident set' time | awk '{ print $1 }')"
+	"$(fgrep 'maximum resident set' time | awk '{ printf("%0.1f\n", $1 / 1024); }')"
 }
 
 if [ $# != 1 ]; then
@@ -135,7 +135,7 @@ format="$format_1_3$format_4_6$format_7"
 printf "$format" "Language" "Type" "Access" "Seconds" "Minutes" "Hours" "RSS"
 
 format_4_6="%10.2f %8.1f %6.1f "
-format_7="%6sk\n"
+format_7="%6sMiB\n"
 format="$format_1_3$format_4_6$format_7"
 
 compiler="unix-sort"

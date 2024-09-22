@@ -54,23 +54,29 @@ cat << EOM
       <entry>Compiler/Interpreter</entry>
       <entry>Execution method</entry>
       <entry>Indexing</entry>
-      <entry>Time (seconds)</entry>
-      <entry>Peak memory</entry>
+      <entry align='right'>Time (seconds)</entry>
+      <entry align='right'>Peak memory</entry>
     </row>
     </thead>
 	
     <tbody>
 EOM
 
-awk '$1 ~ "clang[0-9]+" && $2 == "int" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
-awk '$1 ~ "gcc[0-9]+" && $2 == "int" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
-awk '$1 ~ "gfortran" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
-awk '$1 ~ "rust" && $2 == "i32" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
-awk '$1 ~ "go-" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
-awk '$1 ~ "java-" && $1 !~ "-no-" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry></row>\n", $1, "JIT", $3, $4, $7); }' $infile
-awk '$1 ~ "numba" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry></row>\n", $1, "JIT", $3, $4, $7); }' $infile
-awk '$1 ~ "py-.*-vectors" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry></row>\n", $1, "Interpreted", $3, $4, $7); }' $infile
-awk '$1 ~ "py-.*-loops" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry>%s</entry></row>\n", $1, "Interpreted", $3, $4, $7); }' $infile
+awk '$1 ~ "clang[0-9]+" && $2 == "int" { printf("    <row><entry>C %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
+awk '$1 ~ "gcc[0-9]+" && $2 == "int" { printf("    <row><entry>C %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
+awk '$1 ~ "clang++[0-9]+" && $2 == "int" { printf("    <row><entry>C++ %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
+awk '$1 ~ "g++[0-9]+" && $2 == "int" { printf("    <row><entry>C++ %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
+awk '$1 ~ "gfortran" && $2 == "integer" { printf("    <row><entry>Fortran %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
+awk '$1 ~ "rust" && $2 == "i32" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
+awk '$1 ~ "go-" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
+awk '$1 ~ "java-" && $1 !~ "-no-" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "JIT", $3, $4, $7); }' $infile
+awk '$1 ~ "numba" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "JIT", $3, $4, $7); }' $infile | sed -e 's|py-|python-|'
+awk '$1 ~ "py-.*-vectors" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Interpreted", $3, $4, $7); }' $infile | sed -e 's|py-|python-|'
+awk '$1 ~ "py-.*-loops" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Interpreted", $3, $4, $7); }' $infile | sed -e 's|py-|python-|'
+awk '$1 ~ "perl-.*-vectors" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Interpreted", $3, $4, $7); }' $infile
+awk '$1 ~ "perl-.*-loops" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Interpreted", $3, $4, $7); }' $infile
+awk '$1 ~ "Octave-.*-vectors" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Interpreted", $3, $4, $7); }' $infile
+awk '$1 ~ "Octave-.*-loops" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Interpreted", $3, $4, $7); }' $infile
 
 cat << EOM
     </tbody>
