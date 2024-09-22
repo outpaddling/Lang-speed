@@ -79,22 +79,31 @@ fi
 $gfortran --version
 line
 rustc --version
+rust_version=$(rustc --version | awk '{ print $2 }')
 line
-fpc -version 2>&1 | fgrep version || true
+fpc_version=$(fpc -iW)
+printf "fpc $fpc_version\n"
 line
 ldc2 --version | head -1
+ldc_version=`ldc2 --version | head -1 | awk -F '[()]' '{ print $2 }'`
 line
 go version
+go_version=$(go version 2>&1 | awk '{ print $3 }' | cut -c 3-)
 line
 $java -version
+java_version=$(java -version 2>&1 | fgrep version | awk -F '["_]' '{ print $2 }')
 line
 $python --version
+python_version=$($python --version | awk '{ print $2 }')
 line
 perl --version
+perl_version=`perl --version 2>&1 | fgrep subversion | awk -F '[()]' '{ print $2 }' | tr -d v`
 line
 R --version
+r_version=$(R --version | head -1 | awk '{ print $3 }')
 line
 octave --version
+octave_version=$(octave --version | head -1 | awk '{ print $4 }')
 line
 
 # Always compile, so that compiler output is included in results
@@ -165,7 +174,7 @@ done
 
 for type in i32 i64; do
     if [ -e selsort-rust-$type ]; then
-	compiler="rust"
+	compiler="rust-$rust_version"
 	access="subscripts"
 	printf "$format_1_3" "$compiler" "$type" "$access"
 	$time_cmd ./selsort-rust-i32 < ${count}nums > sorted-list 2> time
@@ -176,7 +185,7 @@ done
 
 # D
 if [ -e selsort-d ]; then
-    compiler="ldc"
+    compiler="ldc2-$ldc_version"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -186,7 +195,7 @@ if [ -e selsort-d ]; then
 fi
 
 if [ -e selsort-go ]; then
-    compiler="go"
+    compiler="go-$go_version"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -196,7 +205,7 @@ if [ -e selsort-go ]; then
 fi
 
 if [ -e selsort-pas ]; then
-    compiler="fpc"
+    compiler="fpc-$fpc_version"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -206,7 +215,7 @@ if [ -e selsort-pas ]; then
 fi
 
 if [ -e SelectSortInt.class ]; then
-    compiler="java-jit"
+    compiler="java-$java_version-jit"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -216,7 +225,7 @@ if [ -e SelectSortInt.class ]; then
 fi
 
 if [ -e SelectSort.class ]; then
-    compiler="java-jit"
+    compiler="java-$java_version-jit"
     type="long"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -224,7 +233,7 @@ if [ -e SelectSort.class ]; then
     sync
     report_time
 
-    compiler="java-no-jit"
+    compiler="java-$java_version-no-jit"
     type="long"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -234,7 +243,7 @@ if [ -e SelectSort.class ]; then
 fi
 
 if [ -n "$python" ]; then
-    compiler="py numba"
+    compiler="py-$python_version+numba"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -244,7 +253,7 @@ if [ -n "$python" ]; then
 	report_time
     fi
     
-    compiler="py vectorized"
+    compiler="py-$python_version-vectors"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -252,7 +261,7 @@ if [ -n "$python" ]; then
     sync
     report_time 5
     
-    compiler="py explicit"
+    compiler="py-$python_version-loops"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -262,7 +271,7 @@ if [ -n "$python" ]; then
 fi
 
 if which perl > /dev/null; then
-    compiler="perl vectorized"
+    compiler="perl-$perl_version-vectors"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -270,7 +279,7 @@ if which perl > /dev/null; then
     sync
     report_time 5
     
-    compiler="perl explicit"
+    compiler="perl-$perl_version-loops"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -280,7 +289,7 @@ if which perl > /dev/null; then
 fi
 
 if which R > /dev/null; then
-    compiler="R vectorized"
+    compiler="R-$r_version-vectors"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -288,7 +297,7 @@ if which R > /dev/null; then
     sync
     report_time
     
-    compiler="R explicit"
+    compiler="R-$r_version-loops"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -298,7 +307,7 @@ if which R > /dev/null; then
 fi
 
 if which octave > /dev/null; then
-    compiler="Octave vectorized"
+    compiler="Octave-$octave_version-vectors"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
@@ -306,7 +315,7 @@ if which octave > /dev/null; then
     sync
     report_time
     
-    compiler="Octave explicit"
+    compiler="Octave-$octave_version-loops"
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
