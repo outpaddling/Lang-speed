@@ -98,7 +98,7 @@ octave --version
 line
 
 # Always compile, so that compiler output is included in results
-# ./compile-progs.sh
+./compile-progs.sh
 
 sync
 

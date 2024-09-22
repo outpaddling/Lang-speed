@@ -1,5 +1,5 @@
 ==========================================================
-Sat Sep 21 15:49:18 CDT 2024
+Sat Sep 21 19:04:16 CDT 2024
 ==========================================================
 FreeBSD coral.acadix.biz 14.0-RELEASE-p11 FreeBSD 14.0-RELEASE-p11 #0: Wed Sep 18 23:01:59 UTC 2024     root@amd64-builder.daemonology.net:/usr/obj/usr/src/amd64.amd64/sys/GENERIC amd64
 ==========================================================
@@ -20,372 +20,65 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ==========================================================
-openjdk version "1.8.0_422"
-OpenJDK Runtime Environment (build 1.8.0_422-b05)
-OpenJDK 64-Bit Server VM (build 25.422-b05, mixed mode)
+GNU Fortran (FreeBSD Ports Collection) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
 ==========================================================
-
-Compiling programs...
-Compiling with clang18 -O2, subscripts, int...
-Compiling with clang18 -O2, subscripts, long...
-Compiling with clang18 -O2, subscripts, float...
-Compiling with clang18 -O2, subscripts, double...
-Compiling with clang18 -O2, pointers, int...
-Compiling with clang18 -O2, pointers, long...
-Compiling with clang18 -O2, pointers, float...
-Compiling with clang18 -O2, pointers, double...
-Compiling with gcc14 -O2, subscripts, int...
-Compiling with gcc14 -O2, subscripts, long...
-Compiling with gcc14 -O2, subscripts, float...
-Compiling with gcc14 -O2, subscripts, double...
-Compiling with gcc14 -O2, pointers, int...
-Compiling with gcc14 -O2, pointers, long...
-Compiling with gcc14 -O2, pointers, float...
-Compiling with gcc14 -O2, pointers, double...
-Compiling with clang++18 -O2, subscripts, int...
-Compiling with clang++18 -O2, subscripts, long...
-Compiling with clang++18 -O2, subscripts, float...
-Compiling with clang++18 -O2, subscripts, double...
-Compiling with clang++18 -O2, pointers, int...
-Compiling with clang++18 -O2, pointers, long...
-Compiling with clang++18 -O2, pointers, float...
-Compiling with clang++18 -O2, pointers, double...
-Compiling with clang++18 -O2, vectors, int...
-Compiling with clang++18 -O2, vectors, long...
-Compiling with clang++18 -O2, vectors, float...
-Compiling with clang++18 -O2, vectors, double...
-Compiling with g++14 -O2, subscripts, int...
-Compiling with g++14 -O2, subscripts, long...
-Compiling with g++14 -O2, subscripts, float...
-Compiling with g++14 -O2, subscripts, double...
-Compiling with g++14 -O2, pointers, int...
-Compiling with g++14 -O2, pointers, long...
-Compiling with g++14 -O2, pointers, float...
-Compiling with g++14 -O2, pointers, double...
-Compiling with g++14 -O2, vectors, int...
-Compiling with g++14 -O2, vectors, long...
-Compiling with g++14 -O2, vectors, float...
-Compiling with g++14 -O2, vectors, double...
-Compiling with gfortran14 -O2, integer...
-Compiling with gfortran14 -O2, real...
-Compiling with gfortran14 -O2, real(8)...
-/usr/local/bin/ldc2
-Compiling with ldc2...
-LDC - the LLVM D compiler (1.39.0):
-  based on DMD v2.109.1 and LLVM 15.0.7
-  built with LDC - the LLVM D compiler (1.39.0)
-  Default target: x86_64-portbld-freebsd14.0
-  Host CPU: ivybridge
-  http://dlang.org - http://wiki.dlang.org/LDC
-
-  Registered Targets:
-    aarch64    - AArch64 (little endian)
-    aarch64_32 - AArch64 (little endian ILP32)
-    aarch64_be - AArch64 (big endian)
-    amdgcn     - AMD GCN GPUs
-    arm        - ARM
-    arm64      - ARM64 (little endian)
-    arm64_32   - ARM64 (little endian ILP32)
-    armeb      - ARM (big endian)
-    avr        - Atmel AVR Microcontroller
-    bpf        - BPF (host endian)
-    bpfeb      - BPF (big endian)
-    bpfel      - BPF (little endian)
-    hexagon    - Hexagon
-    lanai      - Lanai
-    mips       - MIPS (32-bit big endian)
-    mips64     - MIPS (64-bit big endian)
-    mips64el   - MIPS (64-bit little endian)
-    mipsel     - MIPS (32-bit little endian)
-    msp430     - MSP430 [experimental]
-    nvptx      - NVIDIA PTX 32-bit
-    nvptx64    - NVIDIA PTX 64-bit
-    ppc32      - PowerPC 32
-    ppc32le    - PowerPC 32 LE
-    ppc64      - PowerPC 64
-    ppc64le    - PowerPC 64 LE
-    r600       - AMD GPUs HD2XXX-HD6XXX
-    riscv32    - 32-bit RISC-V
-    riscv64    - 64-bit RISC-V
-    sparc      - Sparc
-    sparcel    - Sparc LE
-    sparcv9    - Sparc V9
-    systemz    - SystemZ
-    thumb      - Thumb
-    thumbeb    - Thumb (big endian)
-    ve         - VE
-    wasm32     - WebAssembly 32-bit
-    wasm64     - WebAssembly 64-bit
-    x86        - 32-bit X86: Pentium-Pro and above
-    x86-64     - 64-bit X86: EM64T and AMD64
-    xcore      - XCore
-/usr/local/bin/fpc
-Compiling with fpc...
-3.2.3
-Free Pascal Compiler version 3.2.3 [2024/09/07] for x86_64
-Copyright (c) 1993-2024 by Florian Klaempfl and others
-Target OS: FreeBSD for x86-64
-Compiling selsort.pas
-Linking selsort-pas
-/usr/local/bin/ld.bfd: warning: /usr/local/lib/fpc/3.2.3/units/x86_64-freebsd/rtl/prt0.o: missing .note.GNU-stack section implies executable stack
-/usr/local/bin/ld.bfd: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
-70 lines compiled, 0.1 sec
-/usr/local/bin/rustc
-Compiling with Rust...
 rustc 1.81.0 (f54dd915b 2024-09-02) (built from a source tarball)
-/usr/local/bin/go
-Compiling with go...
+==========================================================
+[0.016] Free Pascal Compiler version 3.2.3 [2024/09/07] for x86_64
+==========================================================
+LDC - the LLVM D compiler (1.39.0):
+==========================================================
 go version go1.21.13 freebsd/amd64
-Compiling with /usr/local/openjdk11/bin/javac...
+==========================================================
+openjdk version "11.0.24" 2024-07-16
+OpenJDK Runtime Environment (build 11.0.24+8-1)
+OpenJDK 64-Bit Server VM (build 11.0.24+8-1, mixed mode)
+==========================================================
+Python 3.11.10
 ==========================================================
 
-Sorting with Unix sort command...
-User time = 0.14 seconds (.00233 minutes) (.00003 hours).
-RSS = 15520 KB
+This is perl 5, version 36, subversion 3 (v5.36.3) built for amd64-freebsd-thread-multi
 
-Sorting int array with clang18 and subscripts...
-User time = 4.61 seconds (.07683 minutes) (.00128 hours).
-RSS = 2848 KB
+Copyright 1987-2023, Larry Wall
 
-Sorting long array with clang18 and subscripts...
-User time = 4.61 seconds (.07683 minutes) (.00128 hours).
-RSS = 3240 KB
+Perl may be copied only under the terms of either the Artistic License or the
+GNU General Public License, which may be found in the Perl 5 source kit.
 
-Sorting float array with clang18 and subscripts...
-User time = 4.64 seconds (.07733 minutes) (.00128 hours).
-RSS = 2852 KB
+Complete documentation for Perl, including FAQ lists, should be found on
+this system using "man perl" or "perldoc perl".  If you have access to the
+Internet, point your browser at https://www.perl.org/, the Perl Home Page.
 
-Sorting double array with clang18 and subscripts...
-User time = 4.63 seconds (.07716 minutes) (.00128 hours).
-RSS = 3240 KB
+==========================================================
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: amd64-portbld-freebsd14.0
 
-Sorting int array with clang18 and pointers...
-User time = 4.68 seconds (.07800 minutes) (.00130 hours).
-RSS = 2852 KB
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under the terms of the
+GNU General Public License versions 2 or 3.
+For more information about these matters see
+https://www.gnu.org/licenses/.
 
-Sorting long array with clang18 and pointers...
-User time = 4.69 seconds (.07816 minutes) (.00130 hours).
-RSS = 3240 KB
+==========================================================
+GNU Octave, version 9.2.0
+Copyright (C) 1993-2024 The Octave Project Developers.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.
 
-Sorting float array with clang18 and pointers...
-User time = 6.12 seconds (.10200 minutes) (.00170 hours).
-RSS = 2852 KB
+Octave was configured for "amd64-portbld-freebsd14.0".
 
-Sorting double array with clang18 and pointers...
-User time = 6.11 seconds (.10183 minutes) (.00169 hours).
-RSS = 3240 KB
+Home page:            https://octave.org
+Support resources:    https://octave.org/support
+Improve Octave:       https://octave.org/get-involved
 
-Sorting int array with gcc14 and subscripts...
-User time = 3.18 seconds (.05300 minutes) (.00088 hours).
-RSS = 2844 KB
-
-Sorting long array with gcc14 and subscripts...
-User time = 3.14 seconds (.05233 minutes) (.00087 hours).
-RSS = 3232 KB
-
-Sorting float array with gcc14 and subscripts...
-User time = 3.12 seconds (.05200 minutes) (.00086 hours).
-RSS = 2844 KB
-
-Sorting double array with gcc14 and subscripts...
-User time = 3.17 seconds (.05283 minutes) (.00088 hours).
-RSS = 3236 KB
-
-Sorting int array with gcc14 and pointers...
-User time = 3.09 seconds (.05150 minutes) (.00085 hours).
-RSS = 2840 KB
-
-Sorting long array with gcc14 and pointers...
-User time = 3.09 seconds (.05150 minutes) (.00085 hours).
-RSS = 3232 KB
-
-Sorting float array with gcc14 and pointers...
-User time = 5.83 seconds (.09716 minutes) (.00161 hours).
-RSS = 2840 KB
-
-Sorting double array with gcc14 and pointers...
-User time = 5.83 seconds (.09716 minutes) (.00161 hours).
-RSS = 3236 KB
-
-Sorting int array with clang++18 and subscripts...
-User time = 4.76 seconds (.07933 minutes) (.00132 hours).
-RSS = 4212 KB
-
-Sorting long array with clang++18 and subscripts...
-User time = 2.22 seconds (.03700 minutes) (.00061 hours).
-RSS = 4596 KB
-
-Sorting float array with clang++18 and subscripts...
-User time = 4.79 seconds (.07983 minutes) (.00133 hours).
-RSS = 4208 KB
-
-Sorting double array with clang++18 and subscripts...
-User time = 4.78 seconds (.07966 minutes) (.00132 hours).
-RSS = 4588 KB
-
-Sorting int array with clang++18 and pointers...
-User time = 4.83 seconds (.08050 minutes) (.00134 hours).
-RSS = 4204 KB
-
-Sorting long array with clang++18 and pointers...
-User time = 4.83 seconds (.08050 minutes) (.00134 hours).
-RSS = 4600 KB
-
-Sorting float array with clang++18 and pointers...
-User time = 6.27 seconds (.10450 minutes) (.00174 hours).
-RSS = 4208 KB
-
-Sorting double array with clang++18 and pointers...
-User time = 6.25 seconds (.10416 minutes) (.00173 hours).
-RSS = 4592 KB
-
-Sorting int array with clang++18 and vectors...
-User time = 4.75 seconds (.07916 minutes) (.00131 hours).
-RSS = 4212 KB
-
-Sorting long array with clang++18 and vectors...
-User time = 2.21 seconds (.03683 minutes) (.00061 hours).
-RSS = 4600 KB
-
-Sorting float array with clang++18 and vectors...
-User time = 4.79 seconds (.07983 minutes) (.00133 hours).
-RSS = 4216 KB
-
-Sorting double array with clang++18 and vectors...
-User time = 4.77 seconds (.07950 minutes) (.00132 hours).
-RSS = 4604 KB
-
-Sorting int array with g++14 and subscripts...
-User time = 3.17 seconds (.05283 minutes) (.00088 hours).
-RSS = 4864 KB
-
-Sorting long array with g++14 and subscripts...
-User time = 3.20 seconds (.05333 minutes) (.00088 hours).
-RSS = 5256 KB
-
-Sorting float array with g++14 and subscripts...
-User time = 3.22 seconds (.05366 minutes) (.00089 hours).
-RSS = 4876 KB
-
-Sorting double array with g++14 and subscripts...
-User time = 3.25 seconds (.05416 minutes) (.00090 hours).
-RSS = 5264 KB
-
-Sorting int array with g++14 and pointers...
-User time = 3.15 seconds (.05250 minutes) (.00087 hours).
-RSS = 4864 KB
-
-Sorting long array with g++14 and pointers...
-User time = 3.15 seconds (.05250 minutes) (.00087 hours).
-RSS = 5260 KB
-
-Sorting float array with g++14 and pointers...
-User time = 5.92 seconds (.09866 minutes) (.00164 hours).
-RSS = 4864 KB
-
-Sorting double array with g++14 and pointers...
-User time = 5.90 seconds (.09833 minutes) (.00163 hours).
-RSS = 5260 KB
-
-Sorting int array with g++14 and vectors...
-User time = 3.17 seconds (.05283 minutes) (.00088 hours).
-RSS = 4868 KB
-
-Sorting long array with g++14 and vectors...
-User time = 3.19 seconds (.05316 minutes) (.00088 hours).
-RSS = 5264 KB
-
-Sorting float array with g++14 and vectors...
-User time = 3.22 seconds (.05366 minutes) (.00089 hours).
-RSS = 4872 KB
-
-Sorting double array with g++14 and vectors...
-User time = 3.24 seconds (.05400 minutes) (.00090 hours).
-RSS = 5268 KB
-
-Sorting integer array with gfortran14 and subscripts...
-User time = 3.12 seconds (.05200 minutes) (.00086 hours).
-RSS = 4268 KB
-
-Sorting real array with gfortran14 and subscripts...
-User time = 3.71 seconds (.06183 minutes) (.00103 hours).
-RSS = 4264 KB
-
-Sorting real(8) array with gfortran14 and subscripts...
-User time = 3.74 seconds (.06233 minutes) (.00103 hours).
-RSS = 4660 KB
-
-Sorting i32 vector with Rust...
-User time = 6.20 seconds (.10333 minutes) (.00172 hours).
-RSS = 3528 KB
-
-Sorting i64 vector with Rust...
-User time = 6.20 seconds (.10333 minutes) (.00172 hours).
-RSS = 3920 KB
-
-Sorting int array Pascal...
-User time = 10.77 seconds (.17950 minutes) (.00299 hours).
-RSS = 1840 KB
-
-Sorting longint array with Pascal...
-User time = 10.75 seconds (.17916 minutes) (.00298 hours).
-RSS = 1840 KB
-
-Sorting int array D...
-User time = 7.67 seconds (.12783 minutes) (.00213 hours).
-RSS = 5820 KB
-
-Sorting with Go...
-User time = 8.03 seconds (.13383 minutes) (.00223 hours).
-RSS = 9008 KB
-
-Sorting with /usr/local/openjdk11/bin/java int array, Just-In-Time compiler enabled...
-User time = 8.42 seconds (.14033 minutes) (.00233 hours).
-RSS = 62256 KB
-
-Sorting with /usr/local/openjdk11/bin/java long array, Just-In-Time compiler enabled...
-User time = 8.38 seconds (.13966 minutes) (.00232 hours).
-RSS = 61244 KB
-
-Sorting with /usr/local/openjdk11/bin/java long array, Just-In-Time compiler disabled...
-User time = 111.75000 seconds (1.86250 minutes) (.03104 hours).
-RSS = 39860 KB
-
-Sorting with Python+numba...
-User time = 12.05 seconds (.20083 minutes) (.00334 hours).
-RSS = 193712 KB
-
-Sorting with vectorized Python extrapolated...
-User time = 175.50000 seconds (2.92500 minutes) (.04875 hours).
-RSS = 11728 KB
-
-Sorting with Python explicit loops extrapolated...
-User time = 303.00000 seconds (5.05000 minutes) (.08416 hours).
-RSS = 11600 KB
-/usr/local/bin/perl
-
-Sorting with vectorized Perl extrapolated...
-User time = 507.25000 seconds (8.45416 minutes) (.14090 hours).
-RSS = 9600 KB
-
-Sorting with Perl explicit loops extrapolated...
-User time = 615.75000 seconds (10.26250 minutes) (.17104 hours).
-RSS = 8272 KB
-/usr/local/bin/R
-
-Sorting with vectorized R...
-User time = 25.71 seconds (.42850 minutes) (.00714 hours).
-RSS = 193564 KB
-
-Sorting with R explicit loops extrapolated...
-User time = 637.75000 seconds (10.62916 minutes) (.17715 hours).
-RSS = 78276 KB
-/usr/local/bin/octave
-
-Sorting with vectorized Octave...
-User time = 10.86 seconds (.18100 minutes) (.00301 hours).
-RSS = 122692 KB
-
-Sorting with Octave explicit loops extrapolated...
-User time = 18528.00000 seconds (308.80000 minutes) (5.14666 hours).
-RSS = 120804 KB
+==========================================================
+==========================================================
+Language             Type       Access     Seconds    Minutes  Hours  RSS  
+unix-sort            int        -          0.13       .00216   .00003 15528
+clang18              int        subscripts 4.61       .07683   .00128 2852 
+clang18              long       subscripts 
