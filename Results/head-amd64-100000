@@ -1,9 +1,9 @@
 ==========================================================
-Sun Sep 22 07:29:17 CDT 2024
+Sun Sep 22 19:05:55 CDT 2024
 ==========================================================
 FreeBSD head.albacore 14.0-RELEASE-p10 FreeBSD 14.0-RELEASE-p10 #0: Wed Sep  4 08:24:14 UTC 2024     root@amd64-builder.daemonology.net:/usr/obj/usr/src/amd64.amd64/sys/GENERIC amd64
 ==========================================================
-CPU: Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz (3392.47-MHz K8-class CPU)
+CPU: Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz (3392.44-MHz K8-class CPU)
 FreeBSD/SMP: Multiprocessor System Detected: 8 CPUs
 cpu0: <ACPI CPU> on acpi0
 ==========================================================
@@ -64,8 +64,6 @@ For more information about these matters see
 https://www.gnu.org/licenses/.
 
 ==========================================================
-octave: unable to open X11 DISPLAY
-octave: disabling GUI features
 GNU Octave, version 9.2.0
 Copyright (C) 1993-2024 The Octave Project Developers.
 This is free software; see the source code for copying conditions.
@@ -78,8 +76,6 @@ Home page:            https://octave.org
 Support resources:    https://octave.org/support
 Improve Octave:       https://octave.org/get-involved
 
-octave: unable to open X11 DISPLAY
-octave: disabling GUI features
 ==========================================================
 
 Compiling programs...
@@ -186,7 +182,7 @@ Compiling selsort.pas
 Linking selsort-pas
 /usr/local/bin/ld.bfd: warning: /usr/local/lib/fpc/3.2.3/units/x86_64-freebsd/rtl/prt0.o: missing .note.GNU-stack section implies executable stack
 /usr/local/bin/ld.bfd: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
-70 lines compiled, 0.1 sec
+70 lines compiled, 1.7 sec
 /usr/local/bin/rustc
 Compiling with Rust...
 rustc 1.81.0 (f54dd915b 2024-09-02) (built from a source tarball)
@@ -195,65 +191,76 @@ Compiling with go...
 go version go1.21.13 freebsd/amd64
 Compiling with /usr/local/openjdk11/bin/javac...
 ==========================================================
+
+Note: Most results for interpreted languages are extrapolated by sorting
+a smaller list and computing the time for the full list assuming strict
+O(N^2) run time (time = some-constant * list-size^2).  This is a reasonable
+assumption, since the selection sort function accounts for more than
+99% of run time for a large list.
+
+Tests timing the full list as well have shown the extrapolated results
+to be accurate to within a few percent.
+
+==========================================================
 Language             Type       Access        Seconds  Minutes  Hours    RSS
-unix-sort            int        -                0.09      0.0    0.0  14884k
-clang18              int        subscripts       4.09      0.1    0.0   2272k
-clang18              long       subscripts       4.10      0.1    0.0   2664k
-clang18              float      subscripts       4.12      0.1    0.0   2272k
-clang18              double     subscripts       4.11      0.1    0.0   2664k
-clang18              int        pointers         4.16      0.1    0.0   2272k
-clang18              long       pointers         4.17      0.1    0.0   2660k
-clang18              float      pointers         5.44      0.1    0.0   2276k
-clang18              double     pointers         5.43      0.1    0.0   2664k
-gcc14                int        subscripts       2.75      0.0    0.0   2268k
-gcc14                long       subscripts       2.79      0.0    0.0   2656k
-gcc14                float      subscripts       2.78      0.0    0.0   2264k
-gcc14                double     subscripts       2.80      0.0    0.0   2656k
-gcc14                int        pointers         2.75      0.0    0.0   2268k
-gcc14                long       pointers         2.75      0.0    0.0   2660k
-gcc14                float      pointers         5.18      0.1    0.0   2268k
-gcc14                double     pointers         5.18      0.1    0.0   2652k
-clang++18            int        subscripts       4.22      0.1    0.0   3476k
-clang++18            long       subscripts       1.96      0.0    0.0   3884k
-clang++18            float      subscripts       4.25      0.1    0.0   3492k
-clang++18            double     subscripts       4.23      0.1    0.0   3880k
-clang++18            int        pointers         4.28      0.1    0.0   3492k
-clang++18            long       pointers         4.29      0.1    0.0   3884k
-clang++18            float      pointers         5.56      0.1    0.0   3484k
-clang++18            double     pointers         5.56      0.1    0.0   3868k
-clang++18            int        vectors          4.21      0.1    0.0   3488k
-clang++18            long       vectors          1.96      0.0    0.0   3876k
-clang++18            float      vectors          4.23      0.1    0.0   3484k
-clang++18            double     vectors          4.23      0.1    0.0   3884k
-g++14                int        subscripts       2.82      0.0    0.0   5368k
-g++14                long       subscripts       2.84      0.0    0.0   5760k
-g++14                float      subscripts       2.85      0.0    0.0   5376k
-g++14                double     subscripts       2.88      0.0    0.0   5764k
-g++14                int        pointers         2.80      0.0    0.0   5372k
-g++14                long       pointers         2.80      0.0    0.0   5760k
-g++14                float      pointers         5.24      0.1    0.0   5368k
-g++14                double     pointers         5.25      0.1    0.0   5756k
-g++14                int        vectors          2.81      0.0    0.0   5368k
-g++14                long       vectors          2.83      0.0    0.0   5764k
-g++14                float      vectors          2.85      0.0    0.0   5380k
-g++14                double     vectors          2.88      0.0    0.0   5760k
-gfortran14           integer    subscripts       2.77      0.0    0.0   6208k
-gfortran14           real       subscripts       3.30      0.1    0.0   6204k
-gfortran14           real(8)    subscripts       3.32      0.1    0.0   6592k
-rust-1.81.0          i32        subscripts       5.46      0.1    0.0   2960k
-rust-1.81.0          i64        subscripts       5.46      0.1    0.0   2960k
-ldc2-1.39.0          integer    subscripts       6.81      0.1    0.0   5288k
-go-1.21.13           integer    subscripts       7.15      0.1    0.0   9736k
-fpc-3.2.3            integer    subscripts       9.58      0.2    0.0   1840k
-java-1.8.0-jit       integer    subscripts       7.31      0.1    0.0  62740k
-java-1.8.0-jit       long       subscripts       7.26      0.1    0.0  63488k
-java-1.8.0-no-jit    long       subscripts      99.25      1.7    0.0  34148k
-py-3.11.10+numba     integer    subscripts      10.49      0.2    0.0 208188k
-py-3.11.10-vectors   integer    subscripts     159.25      2.7    0.0  11092k
-py-3.11.10-loops     integer    subscripts     268.00      4.5    0.1  10972k
-perl-5.36.3-vectors  integer    subscripts     446.00      7.4    0.1   9004k
-perl-5.36.3-loops    integer    subscripts     547.25      9.1    0.2   7648k
-R-4.4.1-vectors      integer    subscripts      22.97      0.4    0.0 191992k
-R-4.4.1-loops        integer    subscripts     564.50      9.4    0.2  75492k
-Octave-9.2.0-vectors integer    subscripts       9.38      0.2    0.0 108848k
-Octave-9.2.0-loops   integer    subscripts   14708.00    245.1    4.1 106936k
+unix-sort            int        -                0.10      0.0    0.0   14.9MiB
+clang18              int        subscripts       4.10      0.1    0.0    2.6MiB
+clang18              long       subscripts       4.10      0.1    0.0    2.9MiB
+clang18              float      subscripts       4.11      0.1    0.0    2.6MiB
+clang18              double     subscripts       4.11      0.1    0.0    2.9MiB
+clang18              int        pointers         4.16      0.1    0.0    2.6MiB
+clang18              long       pointers         4.17      0.1    0.0    2.9MiB
+clang18              float      pointers         5.44      0.1    0.0    2.6MiB
+clang18              double     pointers         5.43      0.1    0.0    2.9MiB
+gcc14                int        subscripts       2.76      0.0    0.0    2.6MiB
+gcc14                long       subscripts       2.78      0.0    0.0    2.9MiB
+gcc14                float      subscripts       2.78      0.0    0.0    2.6MiB
+gcc14                double     subscripts       2.80      0.0    0.0    2.9MiB
+gcc14                int        pointers         2.75      0.0    0.0    2.6MiB
+gcc14                long       pointers         2.75      0.0    0.0    2.9MiB
+gcc14                float      pointers         5.19      0.1    0.0    2.6MiB
+gcc14                double     pointers         5.17      0.1    0.0    2.9MiB
+clang++18            int        subscripts       4.22      0.1    0.0    3.7MiB
+clang++18            long       subscripts       1.96      0.0    0.0    4.1MiB
+clang++18            float      subscripts       4.24      0.1    0.0    3.8MiB
+clang++18            double     subscripts       4.23      0.1    0.0    4.1MiB
+clang++18            int        pointers         4.28      0.1    0.0    3.8MiB
+clang++18            long       pointers         4.29      0.1    0.0    4.1MiB
+clang++18            float      pointers         5.57      0.1    0.0    3.8MiB
+clang++18            double     pointers         5.55      0.1    0.0    4.1MiB
+clang++18            int        vectors          4.21      0.1    0.0    3.8MiB
+clang++18            long       vectors          1.96      0.0    0.0    4.2MiB
+clang++18            float      vectors          4.24      0.1    0.0    3.8MiB
+clang++18            double     vectors          4.22      0.1    0.0    4.2MiB
+g++14                int        subscripts       2.81      0.0    0.0    4.3MiB
+g++14                long       subscripts       2.84      0.0    0.0    4.8MiB
+g++14                float      subscripts       2.85      0.0    0.0    4.4MiB
+g++14                double     subscripts       2.88      0.0    0.0    4.8MiB
+g++14                int        pointers         2.80      0.0    0.0    4.4MiB
+g++14                long       pointers         2.80      0.0    0.0    4.8MiB
+g++14                float      pointers         5.26      0.1    0.0    4.4MiB
+g++14                double     pointers         5.25      0.1    0.0    4.8MiB
+g++14                int        vectors          2.82      0.0    0.0    4.4MiB
+g++14                long       vectors          2.84      0.0    0.0    4.8MiB
+g++14                float      vectors          2.86      0.0    0.0    4.4MiB
+g++14                double     vectors          2.87      0.0    0.0    4.8MiB
+gfortran14           integer    subscripts       2.77      0.0    0.0    3.8MiB
+gfortran14           real       subscripts       3.30      0.1    0.0    3.9MiB
+gfortran14           real(8)    subscripts       3.32      0.1    0.0    4.2MiB
+rust-1.81.0          i32        subscripts       5.48      0.1    0.0    3.2MiB
+rust-1.81.0          i64        subscripts       5.47      0.1    0.0    3.2MiB
+ldc2-1.39.0          integer    subscripts       6.81      0.1    0.0    5.4MiB
+go-1.21.13           integer    subscripts       7.13      0.1    0.0    9.5MiB
+fpc-3.2.3            integer    subscripts       9.59      0.2    0.0    1.8MiB
+java-1.8.0-jit       integer    subscripts       7.34      0.1    0.0   62.3MiB
+java-1.8.0-jit       long       subscripts       7.32      0.1    0.0   62.2MiB
+java-1.8.0-no-jit    long       subscripts      99.75      1.7    0.0   33.8MiB
+py-3.11.10+numba     integer    subscripts      10.61      0.2    0.0  125.5MiB
+py-3.11.10-vectors   integer    subscripts     156.25      2.6    0.0   11.2MiB
+py-3.11.10-loops     integer    subscripts     274.25      4.6    0.1   11.1MiB
+perl-5.36.3-vectors  integer    subscripts     448.00      7.5    0.1    9.2MiB
+perl-5.36.3-loops    integer    subscripts     624.00     10.4    0.2    7.8MiB
+R-4.4.1-vectors      integer    subscripts      23.13      0.4    0.0  195.8MiB
+R-4.4.1-loops        integer    subscripts     569.50      9.5    0.2   71.5MiB
+Octave-9.2.0-vectors integer    subscripts       9.63      0.2    0.0   81.8MiB
+Octave-9.2.0-loops   integer    subscripts   14056.00    234.3    3.9   80.9MiB
