@@ -64,8 +64,8 @@ EOM
 
 awk '$1 ~ "clang[0-9]+" && $2 == "int" { printf("    <row><entry>C %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
 awk '$1 ~ "gcc[0-9]+" && $2 == "int" { printf("    <row><entry>C %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
-awk '$1 ~ "clang++[0-9]+" && $2 == "int" { printf("    <row><entry>C++ %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
-awk '$1 ~ "g++[0-9]+" && $2 == "int" { printf("    <row><entry>C++ %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
+awk '$1 ~ "clang\\+\\+" && $2 == "int" { printf("    <row><entry>C++ %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
+awk '$1 ~ "^g\\+\\+" && $2 == "int" { printf("    <row><entry>C++ %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
 awk '$1 ~ "gfortran" && $2 == "integer" { printf("    <row><entry>Fortran %s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
 awk '$1 ~ "rust" && $2 == "i32" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
 awk '$1 ~ "go-" && $2 == "integer" { printf("    <row><entry>%s</entry><entry>%s</entry><entry>%s</entry><entry align=\"right\">%s</entry><entry align=\"right\">%s</entry></row>\n", $1, "Compiled", $3, $4, $7); }' $infile
