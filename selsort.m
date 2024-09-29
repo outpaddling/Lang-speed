@@ -11,6 +11,7 @@ list_size=list(1);
 list=list(2:list_size+1);
 fclose(fid);
 
+val=jit_enable();
 fprintf('Sorting...\n');
 tic
 for start = 1:list_size

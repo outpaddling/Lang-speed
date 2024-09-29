@@ -1,0 +1,270 @@
+==========================================================
+Sun Sep 29 06:19:38 CDT 2024
+==========================================================
+FreeBSD marlin.acadix.biz 14.0-RELEASE-p11 FreeBSD 14.0-RELEASE-p11 #0: Wed Sep 18 23:01:59 UTC 2024     root@amd64-builder.daemonology.net:/usr/obj/usr/src/amd64.amd64/sys/GENERIC amd64
+==========================================================
+CPU: Intel(R) Core(TM) i7-2820QM CPU @ 2.30GHz (2300.17-MHz K8-class CPU)
+FreeBSD/SMP: Multiprocessor System Detected: 8 CPUs
+cpu0: <ACPI CPU> on acpi0
+==========================================================
+Generating input file of 100000 numbers...
+==========================================================
+clang version 18.1.8
+Target: x86_64-portbld-freebsd14.0
+Thread model: posix
+InstalledDir: /usr/local/llvm18/bin
+==========================================================
+gcc14 (FreeBSD Ports Collection) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+==========================================================
+GNU Fortran (FreeBSD Ports Collection) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+==========================================================
+rustc 1.81.0 (f54dd915b 2024-09-02) (built from a source tarball)
+==========================================================
+fpc 3.2.3
+==========================================================
+LDC - the LLVM D compiler (1.39.0):
+==========================================================
+go version go1.21.13 freebsd/amd64
+==========================================================
+openjdk version "11.0.24" 2024-07-16
+OpenJDK Runtime Environment (build 11.0.24+8-1)
+OpenJDK 64-Bit Server VM (build 11.0.24+8-1, mixed mode)
+==========================================================
+Python 3.11.10
+==========================================================
+
+This is perl 5, version 36, subversion 3 (v5.36.3) built for amd64-freebsd-thread-multi
+
+Copyright 1987-2023, Larry Wall
+
+Perl may be copied only under the terms of either the Artistic License or the
+GNU General Public License, which may be found in the Perl 5 source kit.
+
+Complete documentation for Perl, including FAQ lists, should be found on
+this system using "man perl" or "perldoc perl".  If you have access to the
+Internet, point your browser at https://www.perl.org/, the Perl Home Page.
+
+==========================================================
+R version 4.4.1 (2024-06-14) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: amd64-portbld-freebsd14.0
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under the terms of the
+GNU General Public License versions 2 or 3.
+For more information about these matters see
+https://www.gnu.org/licenses/.
+
+==========================================================
+octave: X11 DISPLAY environment variable not set
+octave: disabling GUI features
+GNU Octave, version 9.2.0
+Copyright (C) 1993-2024 The Octave Project Developers.
+This is free software; see the source code for copying conditions.
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.
+
+Octave was configured for "amd64-portbld-freebsd14.0".
+
+Home page:            https://octave.org
+Support resources:    https://octave.org/support
+Improve Octave:       https://octave.org/get-involved
+
+octave: X11 DISPLAY environment variable not set
+octave: disabling GUI features
+==========================================================
+
+Compiling programs...
+Compiling with clang18 -O2, subscripts, int...
+Compiling with clang18 -O2, subscripts, long...
+Compiling with clang18 -O2, subscripts, float...
+Compiling with clang18 -O2, subscripts, double...
+Compiling with clang18 -O2, pointers, int...
+Compiling with clang18 -O2, pointers, long...
+Compiling with clang18 -O2, pointers, float...
+Compiling with clang18 -O2, pointers, double...
+Compiling with gcc14 -O2, subscripts, int...
+Compiling with gcc14 -O2, subscripts, long...
+Compiling with gcc14 -O2, subscripts, float...
+Compiling with gcc14 -O2, subscripts, double...
+Compiling with gcc14 -O2, pointers, int...
+Compiling with gcc14 -O2, pointers, long...
+Compiling with gcc14 -O2, pointers, float...
+Compiling with gcc14 -O2, pointers, double...
+Compiling with clang++18 -O2, subscripts, int...
+Compiling with clang++18 -O2, subscripts, long...
+Compiling with clang++18 -O2, subscripts, float...
+Compiling with clang++18 -O2, subscripts, double...
+Compiling with clang++18 -O2, pointers, int...
+Compiling with clang++18 -O2, pointers, long...
+Compiling with clang++18 -O2, pointers, float...
+Compiling with clang++18 -O2, pointers, double...
+Compiling with clang++18 -O2, vectors, int...
+Compiling with clang++18 -O2, vectors, long...
+Compiling with clang++18 -O2, vectors, float...
+Compiling with clang++18 -O2, vectors, double...
+Compiling with g++14 -O2, subscripts, int...
+Compiling with g++14 -O2, subscripts, long...
+Compiling with g++14 -O2, subscripts, float...
+Compiling with g++14 -O2, subscripts, double...
+Compiling with g++14 -O2, pointers, int...
+Compiling with g++14 -O2, pointers, long...
+Compiling with g++14 -O2, pointers, float...
+Compiling with g++14 -O2, pointers, double...
+Compiling with g++14 -O2, vectors, int...
+Compiling with g++14 -O2, vectors, long...
+Compiling with g++14 -O2, vectors, float...
+Compiling with g++14 -O2, vectors, double...
+Compiling with gfortran14 -O2, integer...
+Compiling with gfortran14 -O2, real...
+Compiling with gfortran14 -O2, real(8)...
+/usr/local/bin/ldc2
+Compiling with ldc2...
+LDC - the LLVM D compiler (1.39.0):
+  based on DMD v2.109.1 and LLVM 15.0.7
+  built with LDC - the LLVM D compiler (1.39.0)
+  Default target: x86_64-portbld-freebsd14.0
+  Host CPU: sandybridge
+  http://dlang.org - http://wiki.dlang.org/LDC
+
+  Registered Targets:
+    aarch64    - AArch64 (little endian)
+    aarch64_32 - AArch64 (little endian ILP32)
+    aarch64_be - AArch64 (big endian)
+    amdgcn     - AMD GCN GPUs
+    arm        - ARM
+    arm64      - ARM64 (little endian)
+    arm64_32   - ARM64 (little endian ILP32)
+    armeb      - ARM (big endian)
+    avr        - Atmel AVR Microcontroller
+    bpf        - BPF (host endian)
+    bpfeb      - BPF (big endian)
+    bpfel      - BPF (little endian)
+    hexagon    - Hexagon
+    lanai      - Lanai
+    mips       - MIPS (32-bit big endian)
+    mips64     - MIPS (64-bit big endian)
+    mips64el   - MIPS (64-bit little endian)
+    mipsel     - MIPS (32-bit little endian)
+    msp430     - MSP430 [experimental]
+    nvptx      - NVIDIA PTX 32-bit
+    nvptx64    - NVIDIA PTX 64-bit
+    ppc32      - PowerPC 32
+    ppc32le    - PowerPC 32 LE
+    ppc64      - PowerPC 64
+    ppc64le    - PowerPC 64 LE
+    r600       - AMD GPUs HD2XXX-HD6XXX
+    riscv32    - 32-bit RISC-V
+    riscv64    - 64-bit RISC-V
+    sparc      - Sparc
+    sparcel    - Sparc LE
+    sparcv9    - Sparc V9
+    systemz    - SystemZ
+    thumb      - Thumb
+    thumbeb    - Thumb (big endian)
+    ve         - VE
+    wasm32     - WebAssembly 32-bit
+    wasm64     - WebAssembly 64-bit
+    x86        - 32-bit X86: Pentium-Pro and above
+    x86-64     - 64-bit X86: EM64T and AMD64
+    xcore      - XCore
+/usr/local/bin/fpc
+Compiling with fpc...
+3.2.3
+Free Pascal Compiler version 3.2.3 [2024/09/21] for x86_64
+Copyright (c) 1993-2024 by Florian Klaempfl and others
+Target OS: FreeBSD for x86-64
+Compiling selsort.pas
+Linking selsort-pas
+/usr/local/bin/ld.bfd: warning: /usr/local/lib/fpc/3.2.3/units/x86_64-freebsd/rtl/prt0.o: missing .note.GNU-stack section implies executable stack
+/usr/local/bin/ld.bfd: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+70 lines compiled, 1.1 sec
+/usr/local/bin/rustc
+Compiling with Rust...
+rustc 1.81.0 (f54dd915b 2024-09-02) (built from a source tarball)
+/usr/local/bin/go
+Compiling with go...
+go version go1.21.13 freebsd/amd64
+Compiling with /usr/local/openjdk11/bin/javac...
+==========================================================
+
+Note: Most results for interpreted languages are extrapolated by sorting
+a smaller list and computing the time for the full list assuming strict
+O(N^2) run time (time = some-constant * list-size^2).  This is a reasonable
+assumption, since the selection sort function accounts for more than
+99% of run time for a large list.
+
+Tests timing the full list as well have shown the extrapolated results
+to be accurate to within a few percent.
+
+==========================================================
+Language             Type       Access        Seconds  Minutes  Hours    RSS
+unix-sort            int        -                0.14      0.0    0.0   14.9MiB
+clang18              int        subscripts       4.92      0.1    0.0    2.6MiB
+clang18              long       subscripts       4.93      0.1    0.0    2.9MiB
+clang18              float      subscripts       5.00      0.1    0.0    2.6MiB
+clang18              double     subscripts       5.07      0.1    0.0    2.9MiB
+clang18              int        pointers         4.98      0.1    0.0    2.6MiB
+clang18              long       pointers         5.04      0.1    0.0    2.9MiB
+clang18              float      pointers         8.95      0.1    0.0    2.6MiB
+clang18              double     pointers         8.95      0.1    0.0    2.9MiB
+gcc14                int        subscripts       3.29      0.1    0.0    2.6MiB
+gcc14                long       subscripts       3.33      0.1    0.0    2.9MiB
+gcc14                float      subscripts       3.36      0.1    0.0    2.6MiB
+gcc14                double     subscripts       3.41      0.1    0.0    2.9MiB
+gcc14                int        pointers         3.27      0.1    0.0    2.6MiB
+gcc14                long       pointers         3.28      0.1    0.0    2.9MiB
+gcc14                float      pointers         8.75      0.1    0.0    2.6MiB
+gcc14                double     pointers         8.76      0.1    0.0    2.9MiB
+clang++18            int        subscripts       5.04      0.1    0.0    3.7MiB
+clang++18            long       subscripts       2.59      0.0    0.0    4.1MiB
+clang++18            float      subscripts       5.13      0.1    0.0    3.8MiB
+clang++18            double     subscripts       5.22      0.1    0.0    4.2MiB
+clang++18            int        pointers         5.13      0.1    0.0    3.8MiB
+clang++18            long       pointers         5.18      0.1    0.0    4.1MiB
+clang++18            float      pointers         9.10      0.2    0.0    3.8MiB
+clang++18            double     pointers         9.10      0.2    0.0    4.1MiB
+clang++18            int        vectors          5.03      0.1    0.0    3.8MiB
+clang++18            long       vectors          2.59      0.0    0.0    4.2MiB
+clang++18            float      vectors          5.12      0.1    0.0    3.8MiB
+clang++18            double     vectors          5.23      0.1    0.0    4.2MiB
+g++14                int        subscripts       3.36      0.1    0.0    4.3MiB
+g++14                long       subscripts       3.40      0.1    0.0    4.8MiB
+g++14                float      subscripts       3.44      0.1    0.0    4.4MiB
+g++14                double     subscripts       3.50      0.1    0.0    4.8MiB
+g++14                int        pointers         3.34      0.1    0.0    4.4MiB
+g++14                long       pointers         3.35      0.1    0.0    4.8MiB
+g++14                float      pointers         8.84      0.1    0.0    4.4MiB
+g++14                double     pointers         8.85      0.1    0.0    4.8MiB
+g++14                int        vectors          3.36      0.1    0.0    4.4MiB
+g++14                long       vectors          3.39      0.1    0.0    4.8MiB
+g++14                float      vectors          3.46      0.1    0.0    4.4MiB
+g++14                double     vectors          3.51      0.1    0.0    4.8MiB
+gfortran14           integer    subscripts       3.32      0.1    0.0    3.9MiB
+gfortran14           real       subscripts       3.97      0.1    0.0    3.9MiB
+gfortran14           real(8)    subscripts       4.04      0.1    0.0    4.3MiB
+rust-1.81.0          i32        subscripts       6.52      0.1    0.0    3.2MiB
+rust-1.81.0          i64        subscripts       6.52      0.1    0.0    3.2MiB
+ldc2-1.39.0          integer    subscripts       8.13      0.1    0.0    5.4MiB
+go-1.21.13           integer    subscripts       8.64      0.1    0.0    9.9MiB
+fpc-3.2.3            integer    subscripts      11.50      0.2    0.0    1.8MiB
+java-1.8.0-jit       integer    subscripts       8.77      0.1    0.0   62.1MiB
+java-1.8.0-jit       long       subscripts       8.73      0.1    0.0   62.5MiB
+java-1.8.0-no-jit    long       subscripts     118.25      2.0    0.0   33.8MiB
+py-3.11.10+numba     integer    subscripts      13.02      0.2    0.0  138.0MiB
+py-3.11.10-vectors   integer    subscripts     197.50      3.3    0.1   11.2MiB
+py-3.11.10-loops     integer    subscripts     347.50      5.8    0.1   11.1MiB
+perl-5.36.3-vectors  integer    subscripts     561.00      9.3    0.2    9.2MiB
+perl-5.36.3-loops    integer    subscripts     716.75     11.9    0.2    7.9MiB
+R-4.4.1-vectors      integer    subscripts      28.31      0.5    0.0  188.5MiB
+R-4.4.1-loops        integer    subscripts     705.75     11.8    0.2   71.5MiB
+Octave-9.2.0-vectors integer    subscripts      12.46      0.2    0.0   51.1MiB
+Octave-9.2.0-loops   integer    subscripts   16728.00    278.8    4.6   49.2MiB
