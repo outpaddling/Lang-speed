@@ -1,9 +1,9 @@
 #!/bin/sh -e
 
 # Update these to the latest mainstream
-clang_ver=18
+clang_ver=20
 gcc_ver=14
-flang_ver=14
+# flang_ver=14
 python_ver=3.11
 
 python_major_ver=`echo $python_ver | cut -c 1`

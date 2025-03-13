@@ -237,6 +237,14 @@ if [ -e SelectSortInt.class ]; then
     $time_cmd $java SelectSortInt < ${count}nums > sorted-list 2> time
     sync
     report_time
+
+    compiler="java-$java_version-no-jit"
+    type="integer"
+    access="subscripts"
+    printf "$format_1_3" "$compiler" "$type" "$access"
+    $time_cmd $java -Xint SelectSortInt < ${count5}nums > sorted-list 2> time
+    sync
+    report_time 5
 fi
 
 if [ -e SelectSort.class ]; then
@@ -326,7 +334,7 @@ if which octave > /dev/null; then
     type="integer"
     access="subscripts"
     printf "$format_1_3" "$compiler" "$type" "$access"
-    $time_cmd octave selsortvectorized.m ${count}nums > sorted-list 2> time
+    $time_cmd octave selsort-vectorized.m ${count}nums > sorted-list 2> time
     sync
     report_time
     
