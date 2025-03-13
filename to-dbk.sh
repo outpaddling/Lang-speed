@@ -45,8 +45,8 @@ fi
 infile=$1
 
 cat << EOM
-<table xml:id="exe_speed" frame='all'>
-    <title>Selection Sort of 100,000 Integers</title>
+<table xml:id="exe-speed-$(basename $infile)" frame='all'>
+    <title>Selection Sort of ${infile##*-} Integers</title>
     <tgroup cols='5' align='left' colsep='1' rowsep='1'>
     
     <thead>
